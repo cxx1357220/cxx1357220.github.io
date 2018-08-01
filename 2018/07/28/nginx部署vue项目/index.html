@@ -11,11 +11,11 @@
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx部署简单的vue项目">
-<meta property="og:url" content="http://yoursite.com/2018/04/23/nginx部署vue项目/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/07/28/nginx部署vue项目/index.html">
 <meta property="og:site_name" content="cxx的日记本">
 <meta property="og:description" content="centos7安装nginx 安装nginx包 1rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  安装nginx 1yum install -y nginx  查看nginx是否能启动 1systemctl start nginx.service">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-01T08:33:56.911Z">
+<meta property="og:updated_time" content="2018-08-01T08:36:42.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx部署简单的vue项目">
 <meta name="twitter:description" content="centos7安装nginx 安装nginx包 1rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  安装nginx 1yum install -y nginx  查看nginx是否能启动 1systemctl start nginx.service">
@@ -71,8 +71,8 @@
       <div class="outer">
         <section id="main"><article id="post-nginx部署vue项目" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/04/23/nginx部署vue项目/" class="article-date">
-  <time datetime="2018-04-23T12:10:33.000Z" itemprop="datePublished">2018-04-23</time>
+    <a href="/2018/07/28/nginx部署vue项目/" class="article-date">
+  <time datetime="2018-07-28T12:10:33.000Z" itemprop="datePublished">2018-07-28</time>
 </a>
     
   </div>
@@ -131,12 +131,14 @@
 </ul>
 <p>tip:按下i进入修改，esc退出，输入:wq!保存。w保存，q退出，!强制。</p>
 <ul>
-<li>这时候访问网站却弹出403，尝试修改nginx配置：nginx.conf<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/nginx</span><br><span class="line">ls</span><br><span class="line">vi nginx.conf</span><br></pre></td></tr></table></figure>
+<li><p>这时候访问网站却弹出403，尝试修改nginx配置：nginx.conf</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/nginx</span><br><span class="line">ls</span><br><span class="line">vi nginx.conf</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p>编辑</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#user  nginx;   #注释掉以前的</span></span><br><span class="line">user  root;    <span class="comment">#把用户修改成root</span></span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">error_log  /var/<span class="built_in">log</span>/nginx/error.log warn;</span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line">.....一些配置参数，default.conf也是在此引入的.....</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<ul>
-<li>还是403，关闭SELinux <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>还是403，关闭SELinux </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>把里边的改为SELINUX=disabled，然后重启（reboot）掉服务器生效。</p>
@@ -145,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/23/nginx部署vue项目/" data-id="cjkavl4gx000frwvfj2unmtv6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/28/nginx部署vue项目/" data-id="cjkavo299000e38vfmtklgs2s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -156,19 +158,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/04/28/这几天是真的累/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          这几天是真的累
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/15/mock/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/07/23/跳跃数组/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">mock模拟数据，拦截请求</div>
+      <div class="article-nav-title">跳跃数组</div>
     </a>
   
 </nav>
@@ -209,6 +202,10 @@
       <ul>
         
           <li>
+            <a href="/2018/07/28/nginx部署vue项目/">nginx部署简单的vue项目</a>
+          </li>
+        
+          <li>
             <a href="/2018/07/23/跳跃数组/">跳跃数组</a>
           </li>
         
@@ -222,10 +219,6 @@
         
           <li>
             <a href="/2018/07/01/扁平化去重排序/">数组扁平化去重排序</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/30/嵌套路由/">vue路由基础</a>
           </li>
         
       </ul>
