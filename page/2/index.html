@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>cxx的日记本</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="提高自己先">
+<meta property="og:type" content="website">
+<meta property="og:title" content="cxx的日记本">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="cxx的日记本">
+<meta property="og:description" content="提高自己先">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cxx的日记本">
+<meta name="twitter:description" content="提高自己先">
+  
+    <link rel="alternate" href="/atom.xml" title="cxx的日记本" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">cxx的日记本</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录学习的技能和遇到的问题</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-wx_H5_pay" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/wx_H5_pay/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.804Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/wx_H5_pay/">微信H5支付</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅为个人学习之用，如有错误欢迎指出</p>
+<p>看了好久微信文档，心里万马奔腾。</p>
+<h4 id="先获取用户code"><a href="#先获取用户code" class="headerlink" title="先获取用户code"></a>先获取用户code</h4><p><a href="https://mp.weixin.qq.com/wiki?action=doc&amp;id=mp1421140842&amp;t=0.8761570054860548#4" target="_blank" rel="noopener">官方文档</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;redirect_uri=REDIRECT_URL&amp;response_type=code&amp;scope=snsapi_base#wechat_redirect</span><br></pre></td></tr></table></figure></p>
+<p>参数说明：<br>appid：公众号的唯一标识，可以登录到公众平台查看<br>redirect_uri：授权后重定向的回调链接地址，先使用 urlEncode 对链接进行处理，打开个在线转译的转成urlEncode粘贴过来就行了。<br>response_type：返回类型，请填写code，必须是’code’。<br>scope：应用授权作用域，snsapi_base （不弹出授权页面，直接跳转，只能获取用户openid），snsapi_userinfo （弹出授权页面，可通过openid拿到昵称、性别、所在地。并且， 即使在未关注的情况下，只要用户授权，也能获取其信息 ）<br>state：重定向后会带上state参数，开发者可以填写a-zA-Z0-9的参数值，最多128字节（非必需）。</p>
+<p>#wechat_redirect：无论直接打开还是做页面302重定向时候，必须带此参数（必须）。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/01/wx_H5_pay/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/wx_H5_pay/" data-id="cjkak1w5s001zbsvfz0dlfhcp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wamp的几个php扩展" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/wamp的几个php扩展/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.784Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/wamp的几个php扩展/">wamp的几个php扩展</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因工程需要用到的扩展：<a href="http://pecl.php.net/package/redis/" target="_blank" rel="noopener">redis</a>,<a href="http://pecl.php.net/package/SeasLog" target="_blank" rel="noopener">seaslog</a>,<a href="http://pecl.php.net/package/yaf" target="_blank" rel="noopener">yaf</a></p>
+<h2 id="判断是TS还是NTS"><a href="#判断是TS还是NTS" class="headerlink" title="判断是TS还是NTS"></a>判断是TS还是NTS</h2><p>通过phpinfo(); 查看其中的 Thread Safety 项，这个项目就是查看是否是线程安全，如果是：enabled，一般来说应该是ts版，否则是nts版。</p>
+<p><a href="http://localhost/?phpinfo=1" target="_blank" rel="noopener">phpinfo()</a></p>
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><p>把下载好的php_redis.dll, php_seaslog.dll, php_yaf.dll 放到D:\wamp64\bin\php\php7.0.23\ext里。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/01/wamp的几个php扩展/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/wamp的几个php扩展/" data-id="cjkak1w43000lbsvf5igpbpst" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vue-cnode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/vue-cnode/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.776Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/vue-cnode/">vue-cnode几个作者下的文章</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅供个人学习，如有错误请指出</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/cxx1357220/vue-cnode.git</span><br></pre></td></tr></table></figure></p>
+<p>安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/01/vue-cnode/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/vue-cnode/" data-id="cjkak1w48000qbsvf3eyl06q9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-twig日期的处理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/twig日期的处理/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.766Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/twig日期的处理/">twig日期转换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="不同医院后台传出数据为3-2或者3-02，twig获取当前日期为03-02"><a href="#不同医院后台传出数据为3-2或者3-02，twig获取当前日期为03-02" class="headerlink" title="不同医院后台传出数据为3-2或者3-02，twig获取当前日期为03-02"></a>不同医院后台传出数据为3-2或者3-02，twig获取当前日期为03-02</h2><p>后台传出数据为3-2，twig获取当前日期为03-02，进行判断是否为当天的时候两者不相等，所以对后台传出数据在twig内进行转换。</p>
+<p>具体为先转换成3/2格式再转换成03-02.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&#123;&#123; <span class="string">'3-2'</span>|replace(&#123;<span class="string">'-'</span>:<span class="string">'/'</span>&#125;)|date(<span class="string">'m-d'</span>)!=<span class="string">'now'</span>|date(<span class="string">'m-d'</span>) &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &#123;% <span class="keyword">if</span> <span class="string">'3-2'</span>|replace(&#123;<span class="string">'-'</span>:<span class="string">'/'</span>&#125;)|date(<span class="string">'m-d'</span>)!=<span class="string">'now'</span>|date(<span class="string">'m-d'</span>) %&#125;</span><br><span class="line">    &lt;div&gt;&#123;&#123; <span class="string">'3-2'</span>|replace(&#123;<span class="string">'-'</span>:<span class="string">'/'</span>&#125;)|date(<span class="string">'m-d'</span>) &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123; <span class="string">'now'</span>|date(<span class="string">'m-d'</span>) &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &#123;% <span class="keyword">endif</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/twig日期的处理/" data-id="cjkak1w3y000gbsvfra071ygs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-reverse" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/reverse/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.760Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/reverse/">reverse()改变原有数组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅供个人学习，如有错误请指出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> reverse_title=<span class="function">(<span class="params">arr</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> titleList=arr;</span><br><span class="line">    <span class="keyword">return</span> titleList.reverse();</span><br><span class="line">&#125;</span><br><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line"><span class="comment">//(2) [1, 2]</span></span><br><span class="line">b=reverse_title(a);</span><br><span class="line"><span class="comment">//(2) [2, 1]</span></span><br><span class="line">a;</span><br><span class="line"><span class="comment">//(2) [2, 1]</span></span><br></pre></td></tr></table></figure>
+<p>解决方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reverse_title=<span class="function">(<span class="params">arr</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> titleList=arr;</span><br><span class="line">    titleList=titleList.slice();<span class="comment">//数组需要深度copy，不然reverse()会改变原数组</span></span><br><span class="line">    <span class="keyword">return</span> titleList.reverse();</span><br><span class="line">&#125;</span><br><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line"><span class="comment">//(2) [1, 2]</span></span><br><span class="line">b=reverse_title(a);</span><br><span class="line"><span class="comment">//(2) [2, 1]</span></span><br><span class="line">a;</span><br><span class="line"><span class="comment">//(2) [1, 2]</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/reverse/" data-id="cjkak1w3s000dbsvftcbp35z1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node_cnode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/node_cnode/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.753Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/node_cnode/">nodejs获取cnode几个作者下的文章</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅供个人学习，如有错误请指出</p>
+<p>第一次体验nodejs。。。</p>
+<h2 id="直接上代码"><a href="#直接上代码" class="headerlink" title="直接上代码"></a>直接上代码</h2>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/01/node_cnode/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/node_cnode/" data-id="cjkak1w46000nbsvfhekmncex" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mock" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/mock/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.743Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/mock/">mock模拟数据，拦截请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅为个人学习之用，如有错误欢迎指出</p>
+<p>在后端工程师没写好后台的时候怎么办？我们可以用mock模拟数据用于请求，然后把数据格式扔给后端写接口就完事了。</p>
+<p>当然除了mock at back-end programmer外，对一些不可确定的数据的效果，也可以用mock模拟。</p>
+<h2 id="mock"><a href="#mock" class="headerlink" title="mock"></a>mock</h2><p><a href="https://github.com/nuysoft/Mock/wiki/Getting-Started" target="_blank" rel="noopener">github_wiki地址</a></p>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/01/mock/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/mock/" data-id="cjkak1w3r000bbsvfjasqyfmt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mock/">mock</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-lnmp隐藏phpmyadmin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/lnmp隐藏phpmyadmin/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.735Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/lnmp隐藏phpmyadmin/">lnmp隐藏phpmyadmin访问</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅为个人学习之用，如有错误欢迎指出</p>
+<p>phpmyadmin默认的位置很容易被人才到，一般都是域名或IP/phpmyadmin这个位置，所以有必要为phpmyadmin目录重命名来提高安全性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/wwwroot/default/</span><br><span class="line"></span><br><span class="line">mv phpmyadmin phpmyadmin-change</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/lnmp隐藏phpmyadmin/" data-id="cjkak1w3p0009bsvffh9jxbzn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Laravel数据库获取数据" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/Laravel数据库获取数据/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.728Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/Laravel数据库获取数据/">Laravel数据库获取数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Laravel获取表数据"><a href="#Laravel获取表数据" class="headerlink" title="Laravel获取表数据"></a>Laravel获取表数据</h2><p><a href="http://laravelacademy.org/post/6955.html" target="_blank" rel="noopener">Laravel文档</a></p>
+<h4 id="获取多条数据中的某值"><a href="#获取多条数据中的某值" class="headerlink" title="获取多条数据中的某值"></a>获取多条数据中的某值</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$msgtype=MessageBizConfigModel::where(<span class="string">'config_id'</span>,<span class="string">'='</span>,$apptypeid)-&gt;get();</span><br><span class="line"><span class="keyword">foreach</span> ($msgtype <span class="keyword">as</span> $msgtypelist)&#123;</span><br><span class="line">    $typeid = $msgtypelist-&gt;id;</span><br><span class="line">    $typedesc = $msgtypelist-&gt;desc;</span><br><span class="line">    array_push($typeArr,[<span class="string">'name'</span> =&gt; $typedesc, <span class="string">'value'</span> =&gt; $typeid]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/01/Laravel数据库获取数据/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/Laravel数据库获取数据/" data-id="cjkak1w300000bsvfc5e9mi07" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Laravel/">Laravel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-es6异步" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/es6异步/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.722Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/es6异步/">es6 异步的学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅为个人学习之用，如有错误欢迎指出</p>
+<h2 id="async"><a href="#async" class="headerlink" title="async"></a>async</h2><p>async 是异步编程的一种解决方案，通过async和await进行处理，await后边跟随Promise对象，当Promise对象状态发生变化时才会执行后边的代码，async函数的return值会成为.then()的参数，只有在async函数里边的所有await都成功时才会执行.then()。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getStockPriceByName</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> symbol = <span class="keyword">await</span> getStockSymbol(name);</span><br><span class="line">  <span class="keyword">const</span> stockPrice = <span class="keyword">await</span> getStockPrice(symbol);</span><br><span class="line">  <span class="keyword">return</span> stockPrice;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getStockPriceByName(<span class="string">'goog'</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);   <span class="comment">//goog</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>为了避免这种情况，我们可以用try…catch方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> symbol = <span class="keyword">await</span> getStockSymbol(name);;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> symbol;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/01/es6异步/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/es6异步/" data-id="cjkak1w41000ibsvf387ygq4d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mock/" style="font-size: 10px;">mock</a> <a href="/tags/mood/" style="font-size: 15px;">mood</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 17.5px;">php</a> <a href="/tags/vue/" style="font-size: 12.5px;">vue</a> <a href="/tags/yaf/" style="font-size: 10px;">yaf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/01/这几天是真的累/">这几天是真的累</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/01/跳跃数组/">跳跃数组</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/01/最近写自适应想起的几个css/">最近写自适应想起的几个css</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/01/是谁扰乱了我的心弦/">是谁扰乱了我的心弦</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/01/扁平化去重排序/">数组扁平化去重排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 cxx1357220<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
