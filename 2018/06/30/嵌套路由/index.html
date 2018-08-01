@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue路由基础 | cxx的日记本</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="仅供个人学习，如有错误欢迎指出。 vue路由1234567891011import Index from &apos;../pages/index.vue&apos;export default new Router(&amp;#123;  routes: [    &amp;#123;        path: &apos;/&apos;,    //默认路径        name: &apos;Index&apos;,  //便于路由跳转        compon">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue路由基础">
+<meta property="og:url" content="http://yoursite.com/2018/06/30/嵌套路由/index.html">
+<meta property="og:site_name" content="cxx的日记本">
+<meta property="og:description" content="仅供个人学习，如有错误欢迎指出。 vue路由1234567891011import Index from &apos;../pages/index.vue&apos;export default new Router(&amp;#123;  routes: [    &amp;#123;        path: &apos;/&apos;,    //默认路径        name: &apos;Index&apos;,  //便于路由跳转        compon">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-01T06:16:18.145Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue路由基础">
+<meta name="twitter:description" content="仅供个人学习，如有错误欢迎指出。 vue路由1234567891011import Index from &apos;../pages/index.vue&apos;export default new Router(&amp;#123;  routes: [    &amp;#123;        path: &apos;/&apos;,    //默认路径        name: &apos;Index&apos;,  //便于路由跳转        compon">
+  
+    <link rel="alternate" href="/atom.xml" title="cxx的日记本" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">cxx的日记本</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录学习的技能和遇到的问题</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-嵌套路由" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/30/嵌套路由/" class="article-date">
+  <time datetime="2018-06-30T12:10:33.000Z" itemprop="datePublished">2018-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue路由基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅供个人学习，如有错误欢迎指出。</p>
+<h2 id="vue路由"><a href="#vue路由" class="headerlink" title="vue路由"></a>vue路由</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Index <span class="keyword">from</span> <span class="string">'../pages/index.vue'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">        path: <span class="string">'/'</span>,    <span class="comment">//默认路径</span></span><br><span class="line">        name: <span class="string">'Index'</span>,  <span class="comment">//便于路由跳转</span></span><br><span class="line">        component: Index, <span class="comment">//组件</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="vue路由跳转并获取参数"><a href="#vue路由跳转并获取参数" class="headerlink" title="vue路由跳转并获取参数"></a>vue路由跳转并获取参数</h2><h4 id="第一种方法params："><a href="#第一种方法params：" class="headerlink" title="第一种方法params："></a>第一种方法params：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跳转传值：</span></span><br><span class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">name</span>:<span class="string">'Index'</span>,<span class="attr">params</span>:&#123;<span class="attr">name</span>:<span class="string">'xy'</span>,<span class="attr">age</span>:<span class="number">22</span>&#125;&#125;);</span><br><span class="line"><span class="comment">//获取参数：</span></span><br><span class="line"><span class="keyword">this</span>.$route.params.name; <span class="comment">//xy</span></span><br></pre></td></tr></table></figure>
+<h4 id="第二种方法query"><a href="#第二种方法query" class="headerlink" title="第二种方法query:"></a>第二种方法query:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跳转传值：</span></span><br><span class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">name</span>:<span class="string">'Index'</span>,<span class="attr">query</span>:&#123;<span class="attr">name</span>:<span class="string">'xy'</span>,<span class="attr">age</span>:<span class="number">22</span>&#125;&#125;);</span><br><span class="line"><span class="comment">//获取参数：</span></span><br><span class="line"><span class="keyword">this</span>.$route.query.age; <span class="comment">//22</span></span><br></pre></td></tr></table></figure>
+<h2 id="vue嵌套路由"><a href="#vue嵌套路由" class="headerlink" title="vue嵌套路由"></a>vue嵌套路由</h2><h4 id=""><a href="#" class="headerlink" title=""></a><router-view></router-view></h4><p><router-view> 组件是一个 functional 组件，渲染路径匹配到的视图组件。<router-view> 渲染的组件还可以内嵌自己的 <router-view>，根据嵌套路径，渲染嵌套组件。借助 vue-router，使用嵌套路由，嵌套的组件children在<router-view></router-view>中渲染。</router-view></router-view></router-view></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 给视图命名可以对应渲染出口 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span> <span class="attr">name</span>=<span class="string">"order"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Index <span class="keyword">from</span> <span class="string">'../pages/index.vue'</span></span><br><span class="line"><span class="keyword">import</span> order <span class="keyword">from</span> <span class="string">'../pages/order.vue'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">        path: <span class="string">'/'</span>,    <span class="comment">//默认路径</span></span><br><span class="line">        name: <span class="string">'Index'</span>,  <span class="comment">//便于路由跳转</span></span><br><span class="line">        component: Index, <span class="comment">//组件</span></span><br><span class="line">        children：[&#123;</span><br><span class="line">            path: <span class="string">'/'</span>,    <span class="comment">//'/'下，默认加载</span></span><br><span class="line">            name: <span class="string">'order'</span>,  <span class="comment">//便于路由跳转</span></span><br><span class="line">            component: &#123;</span><br><span class="line">                <span class="keyword">default</span>: order, <span class="comment">//组件,没有name的&lt;router-view&gt;默认的为default</span></span><br><span class="line">                order: order  <span class="comment">//对应name='order'的&lt;router-view&gt;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/30/嵌套路由/" data-id="cjkaqng6v00127gvfpbpgitwg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/01/扁平化去重排序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数组扁平化去重排序
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/23/失去的一天/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">慢慢逝去的一天</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mock/" style="font-size: 10px;">mock</a> <a href="/tags/mood/" style="font-size: 15px;">mood</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 17.5px;">php</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/yaf/" style="font-size: 10px;">yaf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/28/这几天是真的累/">这几天是真的累</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/23/跳跃数组/">跳跃数组</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/最近写自适应想起的几个css/">最近写自适应想起的几个css</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/08/是谁扰乱了我的心弦/">是谁扰乱了我的心弦</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/扁平化去重排序/">数组扁平化去重排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 cxx1357220<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

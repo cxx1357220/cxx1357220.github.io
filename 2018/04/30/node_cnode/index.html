@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>nodejs获取cnode几个作者下的文章 | cxx的日记本</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="仅供个人学习，如有错误请指出 第一次体验nodejs。。。 直接上代码">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodejs获取cnode几个作者下的文章">
+<meta property="og:url" content="http://yoursite.com/2018/04/30/node_cnode/index.html">
+<meta property="og:site_name" content="cxx的日记本">
+<meta property="og:description" content="仅供个人学习，如有错误请指出 第一次体验nodejs。。。 直接上代码">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-01T06:16:17.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nodejs获取cnode几个作者下的文章">
+<meta name="twitter:description" content="仅供个人学习，如有错误请指出 第一次体验nodejs。。。 直接上代码">
+  
+    <link rel="alternate" href="/atom.xml" title="cxx的日记本" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">cxx的日记本</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录学习的技能和遇到的问题</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node_cnode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/30/node_cnode/" class="article-date">
+  <time datetime="2018-04-30T12:10:33.000Z" itemprop="datePublished">2018-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      nodejs获取cnode几个作者下的文章
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅供个人学习，如有错误请指出</p>
+<p>第一次体验nodejs。。。</p>
+<h2 id="直接上代码"><a href="#直接上代码" class="headerlink" title="直接上代码"></a>直接上代码</h2><a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">'axios'</span>),</span><br><span class="line">    express = <span class="built_in">require</span>(<span class="string">'express'</span>),</span><br><span class="line">    app = express();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = <span class="string">'JacksonTian,JacksonTian,imzengyang,JZLeung,six-666,vanishcode,chuanzai,huanz,zhangshiqiu,i5ting,Hyurl,D8Ge,spursy,wangchaoduo,JerrysShan,FrankDiao,heguangda,ITCNZ,yuu2lee4,jizhuofeng,MasterShu,2596887568,lvyueyang,lvyueyang,Aoqin,seekcx,zhunrong,vpntj,lovegnep,JerrysShan,vipzrx,hyrlh,superway117,zy445566,DoubleCG,liuzhiguo11,mrlong,quanpf2481,thebingepig,343830384'</span>;</span><br><span class="line">arr = <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr.split(<span class="string">","</span>)));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> api_url = <span class="string">'https://cnodejs.org/api/v1/user/'</span>,</span><br><span class="line">    article_url = <span class="string">'https://cnodejs.org/topic/'</span>;</span><br><span class="line">arr_url = arr.map(<span class="function"><span class="params">x</span> =&gt;</span> api_url + x);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> axios_out = <span class="function">(<span class="params">id</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        axios(&#123;</span><br><span class="line">            method: <span class="string">'get'</span>,</span><br><span class="line">            url: article_url + id,</span><br><span class="line">        &#125;)</span><br><span class="line">            .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">let</span> match_topic_title = response.data.match(<span class="regexp">/(&lt;span class="topic_full_title"&gt;)([\s\r\n\t\S]*?)(&lt;div)/</span>); <span class="comment">//正则文章题目</span></span><br><span class="line">                <span class="keyword">let</span> match_topic = response.data.match(<span class="regexp">/(&lt;div class='topic_content'&gt;)([\s\r\n\t\S]*?)(&lt;\/div&gt;)/</span>); <span class="comment">//正则文章div</span></span><br><span class="line">                <span class="keyword">let</span> words = [match_topic_title[<span class="number">2</span>].replace(<span class="regexp">/&lt;\/?.+?&gt;/g</span>, <span class="string">""</span>).replace(<span class="regexp">/[\r\n\ +]/g</span>, <span class="string">""</span>), match_topic[<span class="number">2</span>].replace(<span class="regexp">/&lt;\/?.+?&gt;/g</span>, <span class="string">""</span>)];  <span class="comment">//除去html标签</span></span><br><span class="line">                resolve(words);  <span class="comment">//传出成功状态参数</span></span><br><span class="line">            &#125;)</span><br><span class="line">            .catch(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">                reject(error);</span><br><span class="line">            &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params">ms</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">reject,resolve</span>) =&gt;</span> &#123;<span class="comment">// (reject,resolve)这两个参数，谁第一个代表成功，第二个代表失败，无论取名如何。</span></span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;resolve(ms+<span class="string">'ms内并发超时，执行继发'</span>)&#125;, ms);   <span class="comment">//给失败状态传值</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> get_list= <span class="keyword">async</span> (id)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> article = &#123;</span><br><span class="line">        id: id,</span><br><span class="line">    &#125;;    </span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        article.words = <span class="keyword">await</span> axios_out(id);<span class="comment">//获取文章纯文本内容</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'axios_out:'</span> + id + <span class="string">':'</span> + e);</span><br><span class="line">        <span class="keyword">return</span> get_list(id);  <span class="comment">//失败后重新执行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> article;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> try_arr = <span class="keyword">async</span> (url) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> get_axios = <span class="keyword">await</span> axios.get(url); <span class="comment">//axios为 Promise 对象</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'try_arr'</span> + e);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> author_all = &#123;&#125;;      <span class="comment">//作者下的所有</span></span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> arr_id = [];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; get_axios.data.data.recent_topics.length; i++) &#123;</span><br><span class="line">            arr_id.push(get_axios.data.data.recent_topics[i].id);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> article_list = <span class="keyword">await</span> <span class="built_in">Promise</span>.race([<span class="built_in">Promise</span>.all(arr_id.map(<span class="function"><span class="params">x</span>=&gt;</span>get_list(x))),timeout(<span class="number">5000</span>)]); <span class="comment">//设定时间内超时则传回失败状态。       </span></span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(e);</span><br><span class="line">        <span class="keyword">var</span> article_list = [];    <span class="comment">//文章列表</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; get_axios.data.data.recent_topics.length; i++) &#123;  <span class="comment">//循环插入文章id到文章列表</span></span><br><span class="line">            <span class="keyword">let</span> article = &#123;</span><br><span class="line">                id: get_axios.data.data.recent_topics[i].id,</span><br><span class="line">            &#125;;                               <span class="comment">//单条文章json</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                article.words = <span class="keyword">await</span> axios_out(get_axios.data.data.recent_topics[i].id);<span class="comment">//获取文章纯文本内容</span></span><br><span class="line">            &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'axios_out:'</span> + get_axios.data.data.recent_topics[i].id + <span class="string">':'</span> + e)</span><br><span class="line">            &#125;</span><br><span class="line">            article_list.push(article);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    author_all.author = get_axios.data.data.loginname;  <span class="comment">//作者下的文章拼装成json</span></span><br><span class="line">    author_all.article_list = article_list;</span><br><span class="line">    <span class="keyword">return</span> author_all;   <span class="comment">//输出</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// const try_all = async function(arr)&#123;        //promise.all封装</span></span><br><span class="line"><span class="comment">//     return Promise.all(arr.map(x=&gt;try_arr(x)));   //只能所有的状态都为resolve，peomise.all的问题。</span></span><br><span class="line"><span class="comment">// &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> try_all = <span class="keyword">async</span> (arr) =&gt; &#123;        <span class="comment">//继发，并发太多会触发服务器503</span></span><br><span class="line">    <span class="keyword">let</span> arr_out = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            arr_out[i] = <span class="keyword">await</span> try_arr(arr[i]);</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'get:'</span> + (i + <span class="number">1</span>)+<span class="string">'/'</span>+arr.length + <span class="string">':'</span> + arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'error:'</span> + (i + <span class="number">1</span>)+<span class="string">'/'</span>+arr.length + <span class="string">':'</span> + arr[i]);</span><br><span class="line">            arr_out[i] = e;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr_out;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> listen = <span class="function"><span class="params">arr_url</span> =&gt;</span> &#123; </span><br><span class="line">    try_all(arr_url).then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">        app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;   <span class="comment">//express输出，http输出json报错</span></span><br><span class="line">            res.send(result);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">var</span> server = app.listen(<span class="number">8081</span>,<span class="string">"127.0.0.1"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> host = server.address().address,</span><br><span class="line">                port = server.address().port;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"应用实例，访问地址为 http://%s:%s"</span>, host, port);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">        .catch(<span class="function"><span class="params">e</span> =&gt;</span> <span class="built_in">console</span>.log(e));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">listen(arr_url);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/30/node_cnode/" data-id="cjkaqng6e000i7gvfdcx9xcse" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/01/reverse/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          reverse()改变原有数组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/04/23/nginx部署vue项目/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">nginx部署简单的vue项目</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mock/" style="font-size: 10px;">mock</a> <a href="/tags/mood/" style="font-size: 15px;">mood</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 17.5px;">php</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/yaf/" style="font-size: 10px;">yaf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/28/这几天是真的累/">这几天是真的累</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/23/跳跃数组/">跳跃数组</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/最近写自适应想起的几个css/">最近写自适应想起的几个css</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/08/是谁扰乱了我的心弦/">是谁扰乱了我的心弦</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/扁平化去重排序/">数组扁平化去重排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 cxx1357220<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

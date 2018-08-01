@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>微信H5支付 | cxx的日记本</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="仅为个人学习之用，如有错误欢迎指出 看了好久微信文档，心里万马奔腾。 先获取用户code官方文档1https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;amp;redirect_uri=REDIRECT_URL&amp;amp;response_type=code&amp;amp;scope=snsapi_base#wechat_redir">
+<meta name="keywords" content="js,php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信H5支付">
+<meta property="og:url" content="http://yoursite.com/2018/05/31/wx_H5_pay/index.html">
+<meta property="og:site_name" content="cxx的日记本">
+<meta property="og:description" content="仅为个人学习之用，如有错误欢迎指出 看了好久微信文档，心里万马奔腾。 先获取用户code官方文档1https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;amp;redirect_uri=REDIRECT_URL&amp;amp;response_type=code&amp;amp;scope=snsapi_base#wechat_redir">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-01T06:14:52.280Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信H5支付">
+<meta name="twitter:description" content="仅为个人学习之用，如有错误欢迎指出 看了好久微信文档，心里万马奔腾。 先获取用户code官方文档1https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;amp;redirect_uri=REDIRECT_URL&amp;amp;response_type=code&amp;amp;scope=snsapi_base#wechat_redir">
+  
+    <link rel="alternate" href="/atom.xml" title="cxx的日记本" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">cxx的日记本</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录学习的技能和遇到的问题</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wx_H5_pay" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/wx_H5_pay/" class="article-date">
+  <time datetime="2018-05-31T12:10:33.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      微信H5支付
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅为个人学习之用，如有错误欢迎指出</p>
+<p>看了好久微信文档，心里万马奔腾。</p>
+<h4 id="先获取用户code"><a href="#先获取用户code" class="headerlink" title="先获取用户code"></a>先获取用户code</h4><p><a href="https://mp.weixin.qq.com/wiki?action=doc&amp;id=mp1421140842&amp;t=0.8761570054860548#4" target="_blank" rel="noopener">官方文档</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;redirect_uri=REDIRECT_URL&amp;response_type=code&amp;scope=snsapi_base#wechat_redirect</span><br></pre></td></tr></table></figure></p>
+<p>参数说明：<br>appid：公众号的唯一标识，可以登录到公众平台查看<br>redirect_uri：授权后重定向的回调链接地址，先使用 urlEncode 对链接进行处理，打开个在线转译的转成urlEncode粘贴过来就行了。<br>response_type：返回类型，请填写code，必须是’code’。<br>scope：应用授权作用域，snsapi_base （不弹出授权页面，直接跳转，只能获取用户openid），snsapi_userinfo （弹出授权页面，可通过openid拿到昵称、性别、所在地。并且， 即使在未关注的情况下，只要用户授权，也能获取其信息 ）<br>state：重定向后会带上state参数，开发者可以填写a-zA-Z0-9的参数值，最多128字节（非必需）。</p>
+<p>#wechat_redirect：无论直接打开还是做页面302重定向时候，必须带此参数（必须）。</p>
+<a id="more"></a>
+<h4 id="根据用户code获取用户与公众号之间关系的openid"><a href="#根据用户code获取用户与公众号之间关系的openid" class="headerlink" title="根据用户code获取用户与公众号之间关系的openid"></a>根据用户code获取用户与公众号之间关系的openid</h4><p><a href="https://mp.weixin.qq.com/wiki?action=doc&amp;id=mp1421140842&amp;t=0.8761570054860548#4" target="_blank" rel="noopener">官方文档</a><br>请求该地址：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&amp;secret=SECRET&amp;code=CODE&amp;grant_type=authorization_code</span><br></pre></td></tr></table></figure></p>
+<p>参数说明：<br>appid：公众号的唯一标识，可以登录到公众平台查看。<br>secret：公众号的appsecret，可以登录到公众平台查看。<br>code：填写第一步获取的code参数。<br>grant_type：填写为authorization_code，必须是’authorization_code’。</p>
+<p>返回值为json数组：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"access_token"</span>:<span class="string">"ACCESS_TOKEN"</span>,     <span class="comment">//网页授权接口调用凭证</span></span><br><span class="line"><span class="string">"expires_in"</span>:<span class="number">7200</span>,                   <span class="comment">//access_token接口调用凭证超时时间</span></span><br><span class="line"><span class="string">"refresh_token"</span>:<span class="string">"REFRESH_TOKEN"</span>,     <span class="comment">//用户刷新access_token</span></span><br><span class="line"><span class="string">"openid"</span>:<span class="string">"OPENID"</span>,                   <span class="comment">//根据用户code获取用户与公众号之间关系的openid</span></span><br><span class="line"><span class="string">"scope"</span>:<span class="string">"SCOPE"</span> &#125;                    <span class="comment">//用户授权的作用域，使用逗号（,）分隔</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="根据openid获取到预支付交易会话标识prepay-id"><a href="#根据openid获取到预支付交易会话标识prepay-id" class="headerlink" title="根据openid获取到预支付交易会话标识prepay_id"></a>根据openid获取到预支付交易会话标识prepay_id</h4><p><a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_1" target="_blank" rel="noopener">官方文档</a><br>请求该地址返回prepay_id<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.mch.weixin.qq.com/pay/unifiedorder</span><br></pre></td></tr></table></figure></p>
+<p>参数说明：<br>xml串：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xml</span>&gt;</span> </span><br><span class="line">   <span class="tag">&lt;<span class="name">appid</span>&gt;</span>wx2421b1c4370ec43b<span class="tag">&lt;/<span class="name">appid</span>&gt;</span>   	微信支付分配的公众账号ID</span><br><span class="line">   <span class="tag">&lt;<span class="name">body</span>&gt;</span>nfyy<span class="tag">&lt;/<span class="name">body</span>&gt;</span>                    商品描述	</span><br><span class="line">   <span class="tag">&lt;<span class="name">mch_id</span>&gt;</span>10000100<span class="tag">&lt;/<span class="name">mch_id</span>&gt;</span>            微信支付分配的商户号</span><br><span class="line">   <span class="tag">&lt;<span class="name">nonce_str</span>&gt;</span>1add1a30ac87aa2db72f57a2375d8fec<span class="tag">&lt;/<span class="name">nonce_str</span>&gt;</span>         随机字符串32位以内</span><br><span class="line">   <span class="tag">&lt;<span class="name">notify_url</span>&gt;</span>http://www.baidu.php<span class="tag">&lt;/<span class="name">notify_url</span>&gt;</span>    异步接收微信支付结果通知的回调地址，通知url必须为外网可访问的url，不能携带参数。</span><br><span class="line">   <span class="tag">&lt;<span class="name">openid</span>&gt;</span>oUpF8uMuAJO_M2pxb1Q9zNjWeS6o<span class="tag">&lt;/<span class="name">openid</span>&gt;</span>    微信用户在商户对应appid下的唯一标识</span><br><span class="line">   <span class="tag">&lt;<span class="name">out_trade_no</span>&gt;</span>1415659990<span class="tag">&lt;/<span class="name">out_trade_no</span>&gt;</span>          商户订单号，同商户下唯一</span><br><span class="line">   <span class="tag">&lt;<span class="name">spbill_create_ip</span>&gt;</span>14.23.150.211<span class="tag">&lt;/<span class="name">spbill_create_ip</span>&gt;</span>   用户ip地址</span><br><span class="line">   <span class="tag">&lt;<span class="name">total_fee</span>&gt;</span>1<span class="tag">&lt;/<span class="name">total_fee</span>&gt;</span>                         交易金额，只能为正整数，不能有千分位，单位为分。</span><br><span class="line">   <span class="tag">&lt;<span class="name">trade_type</span>&gt;</span>JSAPI<span class="tag">&lt;/<span class="name">trade_type</span>&gt;</span>                   交易类型，JSAPI为公众号支付</span><br><span class="line">   <span class="tag">&lt;<span class="name">sign</span>&gt;</span>0CB01533B8C1EF103065174F50BCA001<span class="tag">&lt;/<span class="name">sign</span>&gt;</span>    签名，根据以上的参数和公众号商户的唯一密匙key拼接加密而成</span><br><span class="line"><span class="tag">&lt;/<span class="name">xml</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这边有两个问题，一个是用户ip的获取，一个是签名生成的方法，还有个坑就是，里边必须为UTF-8格式，不然会报错。</p>
+<h4 id="获取用户的ip（spbill-create-ip）"><a href="#获取用户的ip（spbill-create-ip）" class="headerlink" title="获取用户的ip（spbill_create_ip）"></a>获取用户的ip（spbill_create_ip）</h4><p>在后端php实现<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_client_ip</span><span class="params">($type = <span class="number">0</span>)</span> </span>&#123;</span><br><span class="line">    $type       =  $type ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">static</span> $ip  =   <span class="keyword">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span> ($ip !== <span class="keyword">NULL</span>) <span class="keyword">return</span> $ip[$type];</span><br><span class="line">    <span class="keyword">if</span>($_SERVER[<span class="string">'HTTP_X_REAL_IP'</span>])&#123;<span class="comment">//nginx 代理模式下，获取客户端真实IP</span></span><br><span class="line">        $ip=$_SERVER[<span class="string">'HTTP_X_REAL_IP'</span>];     </span><br><span class="line">    &#125;<span class="keyword">elseif</span> (<span class="keyword">isset</span>($_SERVER[<span class="string">'HTTP_CLIENT_IP'</span>])) &#123;<span class="comment">//客户端的ip</span></span><br><span class="line">        $ip     =   $_SERVER[<span class="string">'HTTP_CLIENT_IP'</span>];</span><br><span class="line">    &#125;<span class="keyword">elseif</span> (<span class="keyword">isset</span>($_SERVER[<span class="string">'HTTP_X_FORWARDED_FOR'</span>])) &#123;<span class="comment">//浏览当前页面的用户计算机的网关</span></span><br><span class="line">        $arr    =   explode(<span class="string">','</span>, $_SERVER[<span class="string">'HTTP_X_FORWARDED_FOR'</span>]);</span><br><span class="line">        $pos    =   array_search(<span class="string">'unknown'</span>,$arr);</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">false</span> !== $pos) <span class="keyword">unset</span>($arr[$pos]);</span><br><span class="line">        $ip     =   trim($arr[<span class="number">0</span>]);</span><br><span class="line">    &#125;<span class="keyword">elseif</span> (<span class="keyword">isset</span>($_SERVER[<span class="string">'REMOTE_ADDR'</span>])) &#123;</span><br><span class="line">        $ip     =   $_SERVER[<span class="string">'REMOTE_ADDR'</span>];<span class="comment">//浏览当前页面的用户计算机的ip地址</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $ip=$_SERVER[<span class="string">'REMOTE_ADDR'</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// IP地址合法验证</span></span><br><span class="line">    $long = sprintf(<span class="string">"%u"</span>,ip2long($ip));</span><br><span class="line">    $ip   = $long ? <span class="keyword">array</span>($ip, $long) : <span class="keyword">array</span>(<span class="string">'0.0.0.0'</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> $ip[$type];</span><br><span class="line">&#125;</span><br><span class="line">$user_ip = get_client_ip();   <span class="comment">//获取ip到$user_ip</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="签名算法"><a href="#签名算法" class="headerlink" title="签名算法"></a>签名算法</h4><p><a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=4_3" target="_blank" rel="noopener">官方文档</a><br><a href="https://pay.weixin.qq.com/wiki/tools/signverify/" target="_blank" rel="noopener">测试地址</a><br>◆ 参数名ASCII码从小到大排序（字典序）；<br>◆ 如果参数的值为空不参与签名；<br>◆ 参数名区分大小写；<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$data = <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'appid'</span> =&gt; <span class="string">'wx2421b1c4370ec43b'</span>,   <span class="comment">//微信支付分配的公众账号ID</span></span><br><span class="line">    <span class="string">'body'</span> =&gt; <span class="string">'nfyy'</span>,             <span class="comment">//商品描述</span></span><br><span class="line">    <span class="string">'mch_id'</span> =&gt;  <span class="string">'10000100'</span>,        <span class="comment">//微信支付分配的商户号</span></span><br><span class="line">    <span class="string">'nonce_str'</span> =&gt; <span class="string">'1add1a30ac87aa2db72f57a2375d8fec'</span>,           <span class="comment">//随机字符串</span></span><br><span class="line">    <span class="string">'notify_url'</span> =&gt; <span class="string">'http://www.baidu.php'</span>,    <span class="comment">//异步回调地址</span></span><br><span class="line">    <span class="string">'out_trade_no'</span> =&gt; <span class="string">'1415659990'</span>           <span class="comment">//商户订单号，同商户下唯一</span></span><br><span class="line">    <span class="string">'openid'</span> =&gt; <span class="string">'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o'</span>,        <span class="comment">//用户登录时获取的code中含有的值</span></span><br><span class="line">    <span class="string">'spbill_create_ip'</span> =&gt; $user_ip,           <span class="comment">//网页支付提交用户端ip</span></span><br><span class="line">    <span class="string">'total_fee'</span> =&gt; <span class="number">0.01</span> * <span class="number">100</span>,                  <span class="comment">//订单总额单位为分</span></span><br><span class="line">    <span class="string">'trade_type'</span> =&gt; <span class="string">'JSAPI'</span>           <span class="comment">//交易类型</span></span><br><span class="line">);</span><br><span class="line">$key = <span class="string">'z4hgl4cnk5p0x3aiy2ycf5ac2wl3msie'</span>; <span class="comment">//商户秘钥</span></span><br><span class="line">ksort($data);    <span class="comment">//按照参数名ASCII码从小到大排序（字典序）；</span></span><br><span class="line">$joint = <span class="string">""</span>;      <span class="comment">//拼接</span></span><br><span class="line"><span class="keyword">foreach</span> ($data <span class="keyword">as</span> $k =&gt; $v) &#123;    <span class="comment">//循环拼接</span></span><br><span class="line">    $joint .= $k . <span class="string">"="</span> . $v . <span class="string">"&amp;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">$stringSignTemp = $joint.<span class="string">"key="</span>.$key;   <span class="comment">//加上商户密匙</span></span><br><span class="line">$sign=MD5($stringSignTemp);<span class="comment">//MD5加密</span></span><br><span class="line">$sign=strtoupper($sign); <span class="comment">//转为大写</span></span><br><span class="line">$data[<span class="string">'sign'</span>] = $sign;   <span class="comment">//加到数组中去</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="prepay-id返回值"><a href="#prepay-id返回值" class="headerlink" title="prepay_id返回值"></a>prepay_id返回值</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;xml&gt;</span><br><span class="line">   &lt;return_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/return_code&gt;</span><br><span class="line">   &lt;return_msg&gt;&lt;![CDATA[OK]]&gt;&lt;/return_msg&gt;</span><br><span class="line">   &lt;appid&gt;&lt;![CDATA[wx2421b1c4370ec43b]]&gt;&lt;/appid&gt;</span><br><span class="line">   &lt;mch_id&gt;&lt;![CDATA[<span class="number">10000100</span>]]&gt;&lt;/mch_id&gt;</span><br><span class="line">   &lt;nonce_str&gt;&lt;![CDATA[IITRi8Iabbblz1Jc]]&gt;&lt;/nonce_str&gt;</span><br><span class="line">   &lt;openid&gt;&lt;![CDATA[oUpF8uMuAJO_M2pxb1Q9zNjWeS6o]]&gt;&lt;/openid&gt;</span><br><span class="line">   &lt;sign&gt;&lt;![CDATA[<span class="number">7921E432</span>F65EB8ED0CE9755F0E86D72F]]&gt;&lt;/sign&gt;</span><br><span class="line">   &lt;result_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/result_code&gt;</span><br><span class="line">   &lt;prepay_id&gt;&lt;![CDATA[wx201411101639507cbf6ffd8b0779950874]]&gt;&lt;/prepay_id&gt;</span><br><span class="line">   &lt;trade_type&gt;&lt;![CDATA[JSAPI]]&gt;&lt;/trade_type&gt;</span><br><span class="line">&lt;/xml&gt;</span><br><span class="line">$str = Tools::curl($url,<span class="string">'POST'</span>,$xml);  <span class="comment">//获取返回的xml串</span></span><br><span class="line">$obj = simplexml_load_string($str, <span class="string">'SimpleXMLElement'</span>, LIBXML_NOCDATA);   <span class="comment">//精简掉cdata</span></span><br><span class="line">$eJSON = json_encode($obj);     <span class="comment">//转化为json数组</span></span><br><span class="line">$dJSON = json_decode($eJSON);   <span class="comment">//转化为json数组</span></span><br><span class="line">$prepay_id = $dJSON-&gt;prepay_id;<span class="comment">//获取"prepay_id"对应的值</span></span><br></pre></td></tr></table></figure>
+<h4 id="调用微信的支付"><a href="#调用微信的支付" class="headerlink" title="调用微信的支付"></a>调用微信的支付</h4><p><a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_7&amp;index=6" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$timeStamp=time();</span><br><span class="line">$dataend = <span class="keyword">array</span>( </span><br><span class="line">    <span class="string">'appId'</span> =&gt; $app_id,     <span class="comment">//微信支付分配的公众账号ID</span></span><br><span class="line">    <span class="string">'timeStamp'</span> =&gt;$timeStamp,    <span class="comment">//时间戳</span></span><br><span class="line">    <span class="string">'nonceStr'</span> =&gt; $nonceStr,    <span class="comment">//随机的32位一下数</span></span><br><span class="line">    <span class="string">'package'</span> =&gt; <span class="string">'prepay_id='</span> . $prepay_id,  <span class="comment">//新获取的</span></span><br><span class="line">    <span class="string">'signType'</span> =&gt; <span class="string">'MD5'</span>, <span class="comment">//加密方式</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onBridgeReady</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   WeixinJSBridge.invoke(</span><br><span class="line">       <span class="string">'getBrandWCPayRequest'</span>, &#123;</span><br><span class="line">           <span class="string">"appId"</span>:&#123;&#123;appId&#125;&#125;,     <span class="comment">//公众号名称，由商户传入     </span></span><br><span class="line">           <span class="string">"timeStamp"</span>:&#123;&#123;timeStamp&#125;&#125;,         <span class="comment">//时间戳，自1970年以来的秒数     </span></span><br><span class="line">           <span class="string">"nonceStr"</span>:&#123;&#123;nonceStr&#125;&#125;,   <span class="comment">//随机串     </span></span><br><span class="line">           <span class="string">"package"</span>:&#123;&#123;package&#125;&#125;,     </span><br><span class="line">           <span class="string">"signType"</span>:<span class="string">"MD5"</span>,         <span class="comment">//微信签名方式：     </span></span><br><span class="line">           <span class="string">"paySign"</span>:&#123;&#123;paySign&#125;&#125; <span class="comment">//微信签名 </span></span><br><span class="line">       &#125;,</span><br><span class="line">       <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;     </span><br><span class="line">           <span class="keyword">if</span>(res.err_msg == <span class="string">"get_brand_wcpay_request:ok"</span> ) &#123;&#125;     <span class="comment">// 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 </span></span><br><span class="line">       &#125;</span><br><span class="line">   ); </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> WeixinJSBridge == <span class="string">"undefined"</span>)&#123;</span><br><span class="line">   <span class="keyword">if</span>( <span class="built_in">document</span>.addEventListener )&#123;</span><br><span class="line">       <span class="built_in">document</span>.addEventListener(<span class="string">'WeixinJSBridgeReady'</span>, onBridgeReady, <span class="literal">false</span>);</span><br><span class="line">   &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.attachEvent)&#123;</span><br><span class="line">       <span class="built_in">document</span>.attachEvent(<span class="string">'WeixinJSBridgeReady'</span>, onBridgeReady); </span><br><span class="line">       <span class="built_in">document</span>.attachEvent(<span class="string">'onWeixinJSBridgeReady'</span>, onBridgeReady);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">   onBridgeReady();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//成了</span></span><br></pre></td></tr></table></figure>
+<h5 id="获取时间戳"><a href="#获取时间戳" class="headerlink" title="获取时间戳"></a>获取时间戳</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$timeStamp=time();   <span class="comment">//获取时间戳</span></span><br></pre></td></tr></table></figure>
+<h5 id="随机生成32位码"><a href="#随机生成32位码" class="headerlink" title="随机生成32位码"></a>随机生成32位码</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandom</span><span class="params">($param)</span></span>&#123; <span class="comment">//生成$param位随机数</span></span><br><span class="line">    $str=<span class="string">"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>;</span><br><span class="line">    $strkey = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;$param;$i++)</span><br><span class="line">    &#123;</span><br><span class="line">        $strkey .= $str&#123;mt_rand(<span class="number">0</span>,<span class="number">32</span>)&#125;;    <span class="comment">//生成php随机数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $strkey;</span><br><span class="line">&#125;</span><br><span class="line">$getRandom = getRandom(<span class="number">32</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="xml-json互转"><a href="#xml-json互转" class="headerlink" title="xml.json互转"></a>xml.json互转</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//工程里边有，懒得再写</span></span><br></pre></td></tr></table></figure>
+<h4 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h4><p>记得要转码。</p>
+<p>必须注意大小写，不然各种简明验证错误，比如appid和appId。</p>
+<p>所有的加密都要一样，都用MD5就行。</p>
+<p>在公众号配置好地址，支付地址只能在公众号配置地址最后一个参数可变化，比如：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">www.demo.com/orderdemo/  <span class="comment">//微信公众平台中授权url地址</span></span><br><span class="line">www.demo.com/orderdemo/demo  <span class="comment">//微信浏览器中允许访问的网址</span></span><br></pre></td></tr></table></figure></p>
+<p><a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=11_1" target="_blank" rel="noopener">SDK地址</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/31/wx_H5_pay/" data-id="cjkaqng7q00207gvfk4xickjt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/01/yaf默认路由学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          yaf默认路由学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/21/wamp的几个php扩展/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wamp的几个php扩展</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mock/" style="font-size: 10px;">mock</a> <a href="/tags/mood/" style="font-size: 15px;">mood</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 17.5px;">php</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/yaf/" style="font-size: 10px;">yaf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/28/这几天是真的累/">这几天是真的累</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/23/跳跃数组/">跳跃数组</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/最近写自适应想起的几个css/">最近写自适应想起的几个css</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/08/是谁扰乱了我的心弦/">是谁扰乱了我的心弦</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/扁平化去重排序/">数组扁平化去重排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 cxx1357220<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

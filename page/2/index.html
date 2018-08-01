@@ -69,55 +69,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-yaf默认路由学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/01/yaf默认路由学习/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.814Z" itemprop="datePublished">2018-08-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/yaf默认路由学习/">yaf默认路由学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>仅为个人学习之用，如有错误，欢迎指出。</p>
-<h2 id="yaf为mvc框架"><a href="#yaf为mvc框架" class="headerlink" title="yaf为mvc框架"></a>yaf为mvc框架</h2><p>yaf默认的路由协议Yaf_Route_Static, 就是分析请求中的request_uri, 在去除掉base_uri以后, 获取到真正的负载路由信息的request_uri片段, 具体的策略是, 根据”/“对request_uri分段, 依次得到Module,Controller,Action。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- index.php <span class="comment">//入口文件  </span></span><br><span class="line">- .htaccess <span class="comment">//重写规则      </span></span><br><span class="line">+ conf  </span><br><span class="line">  - application.ini <span class="comment">//配置文件，新建模块需要事先在里边声明     </span></span><br><span class="line">application/  </span><br><span class="line">  + controllers  </span><br><span class="line">     - Index.php <span class="comment">//默认控制器  </span></span><br><span class="line">  + views      </span><br><span class="line">      + index   <span class="comment">//控制器  </span></span><br><span class="line">        - index.phtml <span class="comment">//默认视图  </span></span><br><span class="line">  + modules <span class="comment">//其他模块 </span></span><br><span class="line">     + Admin  <span class="comment">//模块Module</span></span><br><span class="line">        + controllers  </span><br><span class="line">           - User.php <span class="comment">//控制器Controller,在里编写了Action，indexAction控制index.phtml</span></span><br><span class="line">        + views      </span><br><span class="line">           + user   <span class="comment">//控制器  </span></span><br><span class="line">              - index.twig <span class="comment">//视图，默认为.phtml可以通过插件换为html，twig</span></span><br><span class="line">  - library  <span class="comment">//本地类库</span></span><br><span class="line">  - models  <span class="comment">//model目录  </span></span><br><span class="line">  - plugins <span class="comment">//插件目录</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/08/01/yaf默认路由学习/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/yaf默认路由学习/" data-id="cjkaqdc2e000rm4vf8jk9dzi7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yaf/">yaf</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-wx_H5_pay" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/wx_H5_pay/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.804Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/05/31/wx_H5_pay/" class="article-date">
+  <time datetime="2018-05-31T12:10:33.000Z" itemprop="datePublished">2018-05-31</time>
 </a>
     
   </div>
@@ -128,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/wx_H5_pay/">微信H5支付</a>
+      <a class="article-title" href="/2018/05/31/wx_H5_pay/">微信H5支付</a>
     </h1>
   
 
@@ -143,13 +98,13 @@
 <p>#wechat_redirect：无论直接打开还是做页面302重定向时候，必须带此参数（必须）。</p>
         
           <p class="article-more-link">
-            <a href="/2018/08/01/wx_H5_pay/#more">Read More</a>
+            <a href="/2018/05/31/wx_H5_pay/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/wx_H5_pay/" data-id="cjkaqdc44001zm4vfcvgy9kdw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/31/wx_H5_pay/" data-id="cjkaqng7q00207gvfk4xickjt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -163,8 +118,8 @@
   
     <article id="post-wamp的几个php扩展" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/wamp的几个php扩展/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.784Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/05/21/wamp的几个php扩展/" class="article-date">
+  <time datetime="2018-05-21T12:10:33.000Z" itemprop="datePublished">2018-05-21</time>
 </a>
     
   </div>
@@ -175,7 +130,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/wamp的几个php扩展/">wamp的几个php扩展</a>
+      <a class="article-title" href="/2018/05/21/wamp的几个php扩展/">wamp的几个php扩展</a>
     </h1>
   
 
@@ -189,13 +144,13 @@
 <h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><p>把下载好的php_redis.dll, php_seaslog.dll, php_yaf.dll 放到D:\wamp64\bin\php\php7.0.23\ext里。</p>
         
           <p class="article-more-link">
-            <a href="/2018/08/01/wamp的几个php扩展/#more">Read More</a>
+            <a href="/2018/05/21/wamp的几个php扩展/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/wamp的几个php扩展/" data-id="cjkaqdc2d000pm4vfqmar8key" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/21/wamp的几个php扩展/" data-id="cjkaqng6l000q7gvfu69civez" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -209,8 +164,8 @@
   
     <article id="post-vue-cnode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/vue-cnode/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.776Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/05/15/vue-cnode/" class="article-date">
+  <time datetime="2018-05-15T12:10:33.000Z" itemprop="datePublished">2018-05-15</time>
 </a>
     
   </div>
@@ -221,7 +176,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/vue-cnode/">vue-cnode几个作者下的文章</a>
+      <a class="article-title" href="/2018/05/15/vue-cnode/">vue-cnode几个作者下的文章</a>
     </h1>
   
 
@@ -234,13 +189,13 @@
 <p>安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
         
           <p class="article-more-link">
-            <a href="/2018/08/01/vue-cnode/#more">Read More</a>
+            <a href="/2018/05/15/vue-cnode/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/vue-cnode/" data-id="cjkaqdc2b000mm4vfvtfmkuh7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/15/vue-cnode/" data-id="cjkaqng6j000n7gvfenu97ecd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -254,8 +209,8 @@
   
     <article id="post-twig日期的处理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/twig日期的处理/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.766Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/05/08/twig日期的处理/" class="article-date">
+  <time datetime="2018-05-08T12:10:33.000Z" itemprop="datePublished">2018-05-08</time>
 </a>
     
   </div>
@@ -266,7 +221,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/twig日期的处理/">twig日期转换</a>
+      <a class="article-title" href="/2018/05/08/twig日期的处理/">twig日期转换</a>
     </h1>
   
 
@@ -281,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/twig日期的处理/" data-id="cjkaqdc29000km4vfr14v032m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/08/twig日期的处理/" data-id="cjkaqng6i000l7gvf2zg5q02n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -295,8 +250,8 @@
   
     <article id="post-reverse" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/reverse/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.760Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/05/01/reverse/" class="article-date">
+  <time datetime="2018-05-01T12:10:33.000Z" itemprop="datePublished">2018-05-01</time>
 </a>
     
   </div>
@@ -307,7 +262,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/reverse/">reverse()改变原有数组</a>
+      <a class="article-title" href="/2018/05/01/reverse/">reverse()改变原有数组</a>
     </h1>
   
 
@@ -322,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/reverse/" data-id="cjkaqdc26000im4vfu4073krf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/01/reverse/" data-id="cjkaqng6g000j7gvfykao6l5l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -336,8 +291,8 @@
   
     <article id="post-node_cnode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/node_cnode/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.753Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/04/30/node_cnode/" class="article-date">
+  <time datetime="2018-04-30T12:10:33.000Z" itemprop="datePublished">2018-04-30</time>
 </a>
     
   </div>
@@ -348,7 +303,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/node_cnode/">nodejs获取cnode几个作者下的文章</a>
+      <a class="article-title" href="/2018/04/30/node_cnode/">nodejs获取cnode几个作者下的文章</a>
     </h1>
   
 
@@ -361,13 +316,13 @@
 <h2 id="直接上代码"><a href="#直接上代码" class="headerlink" title="直接上代码"></a>直接上代码</h2>
         
           <p class="article-more-link">
-            <a href="/2018/08/01/node_cnode/#more">Read More</a>
+            <a href="/2018/04/30/node_cnode/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/node_cnode/" data-id="cjkaqdc24000hm4vfiqlon338" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/30/node_cnode/" data-id="cjkaqng6e000i7gvfdcx9xcse" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
@@ -379,10 +334,10 @@
 
 
   
-    <article id="post-mock" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-nginx部署vue项目" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/mock/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.743Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/04/23/nginx部署vue项目/" class="article-date">
+  <time datetime="2018-04-23T12:10:33.000Z" itemprop="datePublished">2018-04-23</time>
 </a>
     
   </div>
@@ -393,7 +348,95 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/mock/">mock模拟数据，拦截请求</a>
+      <a class="article-title" href="/2018/04/23/nginx部署vue项目/">nginx部署简单的vue项目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="centos7安装nginx"><a href="#centos7安装nginx" class="headerlink" title="centos7安装nginx"></a>centos7安装nginx</h4><ul>
+<li><p>安装nginx包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看nginx是否能启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start nginx.service</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>没什么问题，把它添加到系统开机启动项中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> nginx.service</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有问题的话，查看问题并修改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status nginx.service</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在浏览器输入服务器地址，出现内容就算成了。不成的话可以试试修改防火墙:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=http </span><br><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=https</span><br><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="vue生产"><a href="#vue生产" class="headerlink" title="vue生产"></a>vue生产</h4><ul>
+<li><p>vue打包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把打包好的dist文件里边的文件放到/home/vue里边去（我喜欢放这，仅此而已），然后把/home及其下文件权限设置为777。</p>
+</li>
+</ul>
+<h4 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h4><ul>
+<li><p>查看nginx目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置文件应该在/etc/nginx下，修改配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/nginx</span><br><span class="line">ls</span><br><span class="line"><span class="built_in">cd</span> /conf.d</span><br><span class="line">ls</span><br><span class="line">vi default.conf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>看到配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       <span class="number">80</span>;     <span class="comment">//端口</span></span><br><span class="line">    server_name  localhost;      <span class="comment">//网站名</span></span><br><span class="line"></span><br><span class="line">    #charset koi8-r;</span><br><span class="line">    #access_log  /var/log/nginx/host.access.log  main;   //可以看到默认的登陆log存放路径，但配置是写在nginx.conf中的，error路径也在此</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        #root   /usr/share/nginx/html;  //默认的站点目录</span><br><span class="line">        root   /home/vue;     <span class="comment">//更改站点目录到/home/vue里边</span></span><br><span class="line">        index  index.html index.htm;   <span class="comment">//主页文件</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /api &#123;          <span class="comment">//设置根目录下/api跨域代理</span></span><br><span class="line">        add_header <span class="string">'Access-Control-Allow-Origin'</span> <span class="string">'*'</span>;  <span class="comment">//允许跨域</span></span><br><span class="line">        proxy_pass   https:<span class="comment">//cnodejs.org/api/v1;    //跨域地址</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    #error_page  404              /404.html;</span><br><span class="line"></span><br><span class="line">    # redirect server error pages to the static page /50x.html</span><br><span class="line">    #</span><br><span class="line">    error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;</span><br><span class="line">    location = <span class="regexp">/50x.html &#123;</span></span><br><span class="line"><span class="regexp">        root   /u</span>sr/share/nginx/html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>tip:按下i进入修改，esc退出，输入:wq!保存。w保存，q退出，!强制。</p>
+<ul>
+<li>这时候访问网站却弹出403，尝试修改nginx配置：nginx.conf<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/nginx</span><br><span class="line">ls</span><br><span class="line">vi nginx.conf</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#user  nginx;   //注释掉以前的</span><br><span class="line">user  root;    <span class="comment">//把用户修改成root</span></span><br><span class="line">worker_processes  <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">error_log  /<span class="keyword">var</span>/log/nginx/error.log warn;</span><br><span class="line">pid        /<span class="keyword">var</span>/run/nginx.pid;</span><br><span class="line"></span><br><span class="line">.....一些配置参数，<span class="keyword">default</span>.conf也是在此引入的.....</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<ul>
+<li>还是403，关闭SELinux </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br></pre></td></tr></table></figure>
+<p>把里边的改为SELINUX=disabled，然后重启（reboot）掉服务器生效。</p>
+<p>end</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/23/nginx部署vue项目/" data-id="cjkaqng67000f7gvfzkjt6r8a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mock" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/15/mock/" class="article-date">
+  <time datetime="2018-04-15T12:10:33.000Z" itemprop="datePublished">2018-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/15/mock/">mock模拟数据，拦截请求</a>
     </h1>
   
 
@@ -407,13 +450,13 @@
 <h2 id="mock"><a href="#mock" class="headerlink" title="mock"></a>mock</h2><p><a href="https://github.com/nuysoft/Mock/wiki/Getting-Started" target="_blank" rel="noopener">github_wiki地址</a></p>
         
           <p class="article-more-link">
-            <a href="/2018/08/01/mock/#more">Read More</a>
+            <a href="/2018/04/15/mock/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/mock/" data-id="cjkaqdc1y000cm4vfvrr6zgig" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/15/mock/" data-id="cjkaqng64000d7gvf7jmku8ls" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mock/">mock</a></li></ul>
@@ -427,8 +470,8 @@
   
     <article id="post-lnmp隐藏phpmyadmin" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/lnmp隐藏phpmyadmin/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.735Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/04/08/lnmp隐藏phpmyadmin/" class="article-date">
+  <time datetime="2018-04-08T12:10:33.000Z" itemprop="datePublished">2018-04-08</time>
 </a>
     
   </div>
@@ -439,7 +482,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/lnmp隐藏phpmyadmin/">lnmp隐藏phpmyadmin访问</a>
+      <a class="article-title" href="/2018/04/08/lnmp隐藏phpmyadmin/">lnmp隐藏phpmyadmin访问</a>
     </h1>
   
 
@@ -454,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/lnmp隐藏phpmyadmin/" data-id="cjkaqdc1u0009m4vf2kuk5fbj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/08/lnmp隐藏phpmyadmin/" data-id="cjkaqng5z000a7gvf2eix19q7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -468,8 +511,8 @@
   
     <article id="post-Laravel数据库获取数据" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/Laravel数据库获取数据/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.728Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/04/01/Laravel数据库获取数据/" class="article-date">
+  <time datetime="2018-04-01T12:10:33.000Z" itemprop="datePublished">2018-04-01</time>
 </a>
     
   </div>
@@ -480,7 +523,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/Laravel数据库获取数据/">Laravel数据库获取数据</a>
+      <a class="article-title" href="/2018/04/01/Laravel数据库获取数据/">Laravel数据库获取数据</a>
     </h1>
   
 
@@ -492,13 +535,13 @@
 <h4 id="获取多条数据中的某值"><a href="#获取多条数据中的某值" class="headerlink" title="获取多条数据中的某值"></a>获取多条数据中的某值</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$msgtype=MessageBizConfigModel::where(<span class="string">'config_id'</span>,<span class="string">'='</span>,$apptypeid)-&gt;get();</span><br><span class="line"><span class="keyword">foreach</span> ($msgtype <span class="keyword">as</span> $msgtypelist)&#123;</span><br><span class="line">    $typeid = $msgtypelist-&gt;id;</span><br><span class="line">    $typedesc = $msgtypelist-&gt;desc;</span><br><span class="line">    array_push($typeArr,[<span class="string">'name'</span> =&gt; $typedesc, <span class="string">'value'</span> =&gt; $typeid]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2018/08/01/Laravel数据库获取数据/#more">Read More</a>
+            <a href="/2018/04/01/Laravel数据库获取数据/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/Laravel数据库获取数据/" data-id="cjkaqdc1m0003m4vfky553fa6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/01/Laravel数据库获取数据/" data-id="cjkaqng5q00047gvfcgggb9vf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Laravel/">Laravel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -537,7 +580,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
   </div>
 
@@ -550,23 +593,23 @@
       <ul>
         
           <li>
-            <a href="/2018/08/01/nginx部署vue项目/">nginx部署简单的vue项目</a>
+            <a href="/2018/07/28/这几天是真的累/">这几天是真的累</a>
           </li>
         
           <li>
-            <a href="/2018/08/01/这几天是真的累/">这几天是真的累</a>
+            <a href="/2018/07/23/跳跃数组/">跳跃数组</a>
           </li>
         
           <li>
-            <a href="/2018/08/01/跳跃数组/">跳跃数组</a>
+            <a href="/2018/07/16/最近写自适应想起的几个css/">最近写自适应想起的几个css</a>
           </li>
         
           <li>
-            <a href="/2018/08/01/最近写自适应想起的几个css/">最近写自适应想起的几个css</a>
+            <a href="/2018/07/08/是谁扰乱了我的心弦/">是谁扰乱了我的心弦</a>
           </li>
         
           <li>
-            <a href="/2018/08/01/是谁扰乱了我的心弦/">是谁扰乱了我的心弦</a>
+            <a href="/2018/07/01/扁平化去重排序/">数组扁平化去重排序</a>
           </li>
         
       </ul>

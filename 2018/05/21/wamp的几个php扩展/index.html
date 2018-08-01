@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>wamp的几个php扩展 | cxx的日记本</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="因工程需要用到的扩展：redis,seaslog,yaf 判断是TS还是NTS通过phpinfo(); 查看其中的 Thread Safety 项，这个项目就是查看是否是线程安全，如果是：enabled，一般来说应该是ts版，否则是nts版。 phpinfo() 安装配置把下载好的php_redis.dll, php_seaslog.dll, php_yaf.dll 放到D:\wamp64\bin">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wamp的几个php扩展">
+<meta property="og:url" content="http://yoursite.com/2018/05/21/wamp的几个php扩展/index.html">
+<meta property="og:site_name" content="cxx的日记本">
+<meta property="og:description" content="因工程需要用到的扩展：redis,seaslog,yaf 判断是TS还是NTS通过phpinfo(); 查看其中的 Thread Safety 项，这个项目就是查看是否是线程安全，如果是：enabled，一般来说应该是ts版，否则是nts版。 phpinfo() 安装配置把下载好的php_redis.dll, php_seaslog.dll, php_yaf.dll 放到D:\wamp64\bin">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-01T06:16:17.981Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wamp的几个php扩展">
+<meta name="twitter:description" content="因工程需要用到的扩展：redis,seaslog,yaf 判断是TS还是NTS通过phpinfo(); 查看其中的 Thread Safety 项，这个项目就是查看是否是线程安全，如果是：enabled，一般来说应该是ts版，否则是nts版。 phpinfo() 安装配置把下载好的php_redis.dll, php_seaslog.dll, php_yaf.dll 放到D:\wamp64\bin">
+  
+    <link rel="alternate" href="/atom.xml" title="cxx的日记本" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">cxx的日记本</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录学习的技能和遇到的问题</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wamp的几个php扩展" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/21/wamp的几个php扩展/" class="article-date">
+  <time datetime="2018-05-21T12:10:33.000Z" itemprop="datePublished">2018-05-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wamp的几个php扩展
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因工程需要用到的扩展：<a href="http://pecl.php.net/package/redis/" target="_blank" rel="noopener">redis</a>,<a href="http://pecl.php.net/package/SeasLog" target="_blank" rel="noopener">seaslog</a>,<a href="http://pecl.php.net/package/yaf" target="_blank" rel="noopener">yaf</a></p>
+<h2 id="判断是TS还是NTS"><a href="#判断是TS还是NTS" class="headerlink" title="判断是TS还是NTS"></a>判断是TS还是NTS</h2><p>通过phpinfo(); 查看其中的 Thread Safety 项，这个项目就是查看是否是线程安全，如果是：enabled，一般来说应该是ts版，否则是nts版。</p>
+<p><a href="http://localhost/?phpinfo=1" target="_blank" rel="noopener">phpinfo()</a></p>
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><p>把下载好的php_redis.dll, php_seaslog.dll, php_yaf.dll 放到D:\wamp64\bin\php\php7.0.23\ext里。</p>
+<a id="more"></a>
+<h4 id="修改php-ini"><a href="#修改php-ini" class="headerlink" title="修改php.ini"></a>修改php.ini</h4><h6 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extension=php_redis.dll</span><br></pre></td></tr></table></figure>
+<h6 id="seaslog"><a href="#seaslog" class="headerlink" title="seaslog"></a>seaslog</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[SeasLog]</span><br><span class="line">extension=php_seaslog.dll</span><br><span class="line">seaslog.default_basepath=/log/seaslog-test</span><br><span class="line">seaslog.default_logger=default</span><br><span class="line">seaslog.disting_type=1</span><br><span class="line">seaslog.disting_by_hour=1</span><br><span class="line">seaslog.use_buffer=1</span><br><span class="line">seaslog.buffer_size=100</span><br><span class="line">seaslog.level=0</span><br><span class="line">seaslog.trace_error=1</span><br><span class="line">seaslog.trace_exception=0</span><br></pre></td></tr></table></figure>
+<h6 id="yaf"><a href="#yaf" class="headerlink" title="yaf"></a>yaf</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">extension=php_yaf.dll</span><br><span class="line"></span><br><span class="line">[yaf]</span><br><span class="line">yaf.use_namespace = On</span><br><span class="line">yaf.use_spl_autoload = 1</span><br></pre></td></tr></table></figure>
+<h5 id="download"><a href="#download" class="headerlink" title="download"></a>download</h5><p><a href="http://pecl.php.net/package/yaf" target="_blank" rel="noopener">yaf</a>  <a href="http://pecl.php.net/package/redis/" target="_blank" rel="noopener">redis</a>  <a href="http://pecl.php.net/package/SeasLog" target="_blank" rel="noopener">seaslog</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/21/wamp的几个php扩展/" data-id="cjkaqng6l000q7gvfu69civez" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/31/wx_H5_pay/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          微信H5支付
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/15/vue-cnode/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue-cnode几个作者下的文章</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mock/" style="font-size: 10px;">mock</a> <a href="/tags/mood/" style="font-size: 15px;">mood</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 17.5px;">php</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/yaf/" style="font-size: 10px;">yaf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/28/这几天是真的累/">这几天是真的累</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/23/跳跃数组/">跳跃数组</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/最近写自适应想起的几个css/">最近写自适应想起的几个css</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/08/是谁扰乱了我的心弦/">是谁扰乱了我的心弦</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/扁平化去重排序/">数组扁平化去重排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 cxx1357220<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
