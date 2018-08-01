@@ -69,6 +69,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-yaf默认路由学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/yaf默认路由学习/" class="article-date">
+  <time datetime="2018-08-01T03:05:04.814Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/yaf默认路由学习/">yaf默认路由学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅为个人学习之用，如有错误，欢迎指出。</p>
+<h2 id="yaf为mvc框架"><a href="#yaf为mvc框架" class="headerlink" title="yaf为mvc框架"></a>yaf为mvc框架</h2><p>yaf默认的路由协议Yaf_Route_Static, 就是分析请求中的request_uri, 在去除掉base_uri以后, 获取到真正的负载路由信息的request_uri片段, 具体的策略是, 根据”/“对request_uri分段, 依次得到Module,Controller,Action。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- index.php <span class="comment">//入口文件  </span></span><br><span class="line">- .htaccess <span class="comment">//重写规则      </span></span><br><span class="line">+ conf  </span><br><span class="line">  - application.ini <span class="comment">//配置文件，新建模块需要事先在里边声明     </span></span><br><span class="line">application/  </span><br><span class="line">  + controllers  </span><br><span class="line">     - Index.php <span class="comment">//默认控制器  </span></span><br><span class="line">  + views      </span><br><span class="line">      + index   <span class="comment">//控制器  </span></span><br><span class="line">        - index.phtml <span class="comment">//默认视图  </span></span><br><span class="line">  + modules <span class="comment">//其他模块 </span></span><br><span class="line">     + Admin  <span class="comment">//模块Module</span></span><br><span class="line">        + controllers  </span><br><span class="line">           - User.php <span class="comment">//控制器Controller,在里编写了Action，indexAction控制index.phtml</span></span><br><span class="line">        + views      </span><br><span class="line">           + user   <span class="comment">//控制器  </span></span><br><span class="line">              - index.twig <span class="comment">//视图，默认为.phtml可以通过插件换为html，twig</span></span><br><span class="line">  - library  <span class="comment">//本地类库</span></span><br><span class="line">  - models  <span class="comment">//model目录  </span></span><br><span class="line">  - plugins <span class="comment">//插件目录</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/01/yaf默认路由学习/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/yaf默认路由学习/" data-id="cjkak5qis000u90vfsh6veyic" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yaf/">yaf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-wx_H5_pay" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/01/wx_H5_pay/" class="article-date">
@@ -104,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/wx_H5_pay/" data-id="cjkak1w5s001zbsvfz0dlfhcp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/wx_H5_pay/" data-id="cjkak5qkd001y90vfjq0ajpak" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -150,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/wamp的几个php扩展/" data-id="cjkak1w43000lbsvf5igpbpst" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/wamp的几个php扩展/" data-id="cjkak5qiq000r90vf4psxtg7x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -195,7 +240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/vue-cnode/" data-id="cjkak1w48000qbsvf3eyl06q9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/vue-cnode/" data-id="cjkak5qim000m90vfamz9dcm4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -236,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/twig日期的处理/" data-id="cjkak1w3y000gbsvfra071ygs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/twig日期的处理/" data-id="cjkak5qij000k90vf5omw1lg1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -277,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/reverse/" data-id="cjkak1w3s000dbsvftcbp35z1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/reverse/" data-id="cjkak5qih000i90vfes2apa2a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -322,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/node_cnode/" data-id="cjkak1w46000nbsvfhekmncex" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/node_cnode/" data-id="cjkak5qid000h90vfi4gdzsan" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
@@ -368,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/mock/" data-id="cjkak1w3r000bbsvfjasqyfmt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/mock/" data-id="cjkak5qia000e90vftrxkgv4z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mock/">mock</a></li></ul>
@@ -409,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/lnmp隐藏phpmyadmin/" data-id="cjkak1w3p0009bsvffh9jxbzn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/lnmp隐藏phpmyadmin/" data-id="cjkak5qi8000c90vf4nlfjzdy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -453,57 +498,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/Laravel数据库获取数据/" data-id="cjkak1w300000bsvfc5e9mi07" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/Laravel数据库获取数据/" data-id="cjkak5qhs000190vf8tv2jy89" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Laravel/">Laravel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-es6异步" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/01/es6异步/" class="article-date">
-  <time datetime="2018-08-01T03:05:04.722Z" itemprop="datePublished">2018-08-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/es6异步/">es6 异步的学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>仅为个人学习之用，如有错误欢迎指出</p>
-<h2 id="async"><a href="#async" class="headerlink" title="async"></a>async</h2><p>async 是异步编程的一种解决方案，通过async和await进行处理，await后边跟随Promise对象，当Promise对象状态发生变化时才会执行后边的代码，async函数的return值会成为.then()的参数，只有在async函数里边的所有await都成功时才会执行.then()。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getStockPriceByName</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> symbol = <span class="keyword">await</span> getStockSymbol(name);</span><br><span class="line">  <span class="keyword">const</span> stockPrice = <span class="keyword">await</span> getStockPrice(symbol);</span><br><span class="line">  <span class="keyword">return</span> stockPrice;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getStockPriceByName(<span class="string">'goog'</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);   <span class="comment">//goog</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>为了避免这种情况，我们可以用try…catch方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> symbol = <span class="keyword">await</span> getStockSymbol(name);;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> symbol;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/08/01/es6异步/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/es6异步/" data-id="cjkak1w41000ibsvf387ygq4d" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 
     </footer>
   </div>
@@ -552,6 +550,10 @@
       <ul>
         
           <li>
+            <a href="/2018/08/01/nginx部署vue项目/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/01/这几天是真的累/">这几天是真的累</a>
           </li>
         
@@ -565,10 +567,6 @@
         
           <li>
             <a href="/2018/08/01/是谁扰乱了我的心弦/">是谁扰乱了我的心弦</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/01/扁平化去重排序/">数组扁平化去重排序</a>
           </li>
         
       </ul>
