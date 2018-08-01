@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="cxx的日记本">
 <meta property="og:description" content="centos7安装nginx 安装nginx包 1rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  安装nginx 1yum install -y nginx  查看nginx是否能启动 1systemctl start nginx.service">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-01T06:16:17.780Z">
+<meta property="og:updated_time" content="2018-08-01T08:33:56.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx部署简单的vue项目">
 <meta name="twitter:description" content="centos7安装nginx 安装nginx包 1rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  安装nginx 1yum install -y nginx  查看nginx是否能启动 1systemctl start nginx.service">
@@ -134,18 +134,18 @@
 <li>这时候访问网站却弹出403，尝试修改nginx配置：nginx.conf<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/nginx</span><br><span class="line">ls</span><br><span class="line">vi nginx.conf</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#user  nginx;   //注释掉以前的</span><br><span class="line">user  root;    <span class="comment">//把用户修改成root</span></span><br><span class="line">worker_processes  <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">error_log  /<span class="keyword">var</span>/log/nginx/error.log warn;</span><br><span class="line">pid        /<span class="keyword">var</span>/run/nginx.pid;</span><br><span class="line"></span><br><span class="line">.....一些配置参数，<span class="keyword">default</span>.conf也是在此引入的.....</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#user  nginx;   #注释掉以前的</span></span><br><span class="line">user  root;    <span class="comment">#把用户修改成root</span></span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">error_log  /var/<span class="built_in">log</span>/nginx/error.log warn;</span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line">.....一些配置参数，default.conf也是在此引入的.....</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <ul>
-<li>还是403，关闭SELinux </li>
+<li>还是403，关闭SELinux <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br></pre></td></tr></table></figure>
 <p>把里边的改为SELINUX=disabled，然后重启（reboot）掉服务器生效。</p>
 <p>end</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/23/nginx部署vue项目/" data-id="cjkav7x87000ed4vfrpmz5gxi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/23/nginx部署vue项目/" data-id="cjkavl4gx000frwvfj2unmtv6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
