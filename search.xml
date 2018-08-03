@@ -33,14 +33,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[是谁扰乱了我的心弦]]></title>
-    <url>%2F2018%2F07%2F08%2F%E6%98%AF%E8%B0%81%E6%89%B0%E4%B9%B1%E4%BA%86%E6%88%91%E7%9A%84%E5%BF%83%E5%BC%A6%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <tags>
-        <tag>mood</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[数组扁平化去重排序]]></title>
     <url>%2F2018%2F07%2F01%2F%E6%89%81%E5%B9%B3%E5%8C%96%E5%8E%BB%E9%87%8D%E6%8E%92%E5%BA%8F%2F</url>
     <content type="text"><![CDATA[仅供个人学习，如有错误请指出 扁平化，去重，排序1234567891011let arr=[[1,5,1,2],[2,3,4]];//排序const arr_sort = arr =&gt; arr.sort((a, b) =&gt;a - b);//扁平化const flat = arr =&gt; arr.toString().split(',').map(x=&gt;parseFloat(x)); //toString()先转化为字符串，split(',')再根据'，'号分割成字符串,map(x=&gt;parseFloat(x))最后转化为数字，从而实现扁平化const flatten = arr =&gt; arr.reduce((a, b) =&gt; a.concat(Array.isArray(b) ? flatten(b) : b), []);//reduce遍历，concat扁平化一层//es6去重const removal = arr =&gt;Array.from(new Set(arr));// new Set()去重，array.from()将set转为真正的数组const rm =arr =&gt; [...new Set(arr)]; //扩展运算符也可以将set结构转化为数组 简化1234567//第一种const arr_handle = arr =&gt; Array.from(new Set(arr.toString().split(',').map(x=&gt;parseFloat(x)))).sort((a, b) =&gt;a - b); //第二种const arr_handle1 = arr =&gt; &#123;let flatten = arr =&gt; arr.reduce((a, b) =&gt; a.concat(Array.isArray(b)? flatten(b): b), []);return [...new Set(flatten(arr))].sort((a, b) =&gt; a &gt; b);&#125;;]]></content>
@@ -196,6 +188,14 @@
       <tags>
         <tag>js</tag>
         <tag>echarts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[是谁扰乱了我的心弦]]></title>
+    <url>%2F2018%2F03%2F13%2F%E6%98%AF%E8%B0%81%E6%89%B0%E4%B9%B1%E4%BA%86%E6%88%91%E7%9A%84%E5%BF%83%E5%BC%A6%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <tags>
+        <tag>mood</tag>
       </tags>
   </entry>
   <entry>
