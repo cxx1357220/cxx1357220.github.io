@@ -7,18 +7,18 @@
   
   <title>nginx部署简单的vue项目 | cxx的日记本</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="centos7安装nginx 安装nginx包 1rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  安装nginx 1yum install -y nginx  查看nginx是否能启动 1systemctl start nginx.service">
+  <meta name="description" content="centos7安装nginx">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx部署简单的vue项目">
 <meta property="og:url" content="http://heechina.cn/2018/07/28/nginx部署vue项目/index.html">
 <meta property="og:site_name" content="cxx的日记本">
-<meta property="og:description" content="centos7安装nginx 安装nginx包 1rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  安装nginx 1yum install -y nginx  查看nginx是否能启动 1systemctl start nginx.service">
+<meta property="og:description" content="centos7安装nginx">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-01T08:36:42.790Z">
+<meta property="og:updated_time" content="2018-08-03T01:45:48.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx部署简单的vue项目">
-<meta name="twitter:description" content="centos7安装nginx 安装nginx包 1rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  安装nginx 1yum install -y nginx  查看nginx是否能启动 1systemctl start nginx.service">
+<meta name="twitter:description" content="centos7安装nginx">
   
     <link rel="alternate" href="https://github.com/cxx1357220" title="cxx的日记本" type="application/atom+xml">
   
@@ -91,7 +91,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="centos7安装nginx"><a href="#centos7安装nginx" class="headerlink" title="centos7安装nginx"></a>centos7安装nginx</h4><ul>
+        <h4 id="centos7安装nginx"><a href="#centos7安装nginx" class="headerlink" title="centos7安装nginx"></a>centos7安装nginx</h4><a id="more"></a>
+<ul>
 <li><p>安装nginx包</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
 </li>
@@ -142,12 +143,13 @@
 </li>
 </ul>
 <p>把里边的改为SELINUX=disabled，然后重启（reboot）掉服务器生效。</p>
-<p>end</p>
+<h3 id="nginx部署两个项目引发的路径问题"><a href="#nginx部署两个项目引发的路径问题" class="headerlink" title="nginx部署两个项目引发的路径问题"></a>nginx部署两个项目引发的路径问题</h3><h4 id="nginx-conf配置"><a href="#nginx-conf配置" class="headerlink" title="nginx conf配置"></a>nginx conf配置</h4><p>url路径名称必须和/home/下文件夹vue-element-admin一致<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   location /cnode &#123;</span><br><span class="line">       <span class="comment">#root   /usr/share/nginx/html;</span></span><br><span class="line">root   /home/;</span><br><span class="line">       index  index.html index.htm;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   location /api &#123;</span><br><span class="line">add_header <span class="string">'Access-Control-Allow-Origin'</span> <span class="string">'*'</span>;</span><br><span class="line">       proxy_pass   https://cnodejs.org/api/v1;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   location /vue-element-admin &#123; <span class="comment">#此路径名称必须和/home/下文件夹vue-element-admin一致</span></span><br><span class="line">       <span class="comment">#root   /usr/share/nginx/html;</span></span><br><span class="line">root   /home/;</span><br><span class="line">       index  index.html index.htm;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="静态资源加载404"><a href="#静态资源加载404" class="headerlink" title="静态资源加载404"></a>静态资源加载404</h4><p>由于资源已不在根目录下，所以需要更改配置index.js里边的build的路径，比如此项目在/home/vue-element-admin/文件夹下。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assetsPublicPath: <span class="string">'/vue-element-admin/'</span>, <span class="comment">// If you are deployed on the root path, please use '/'</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/07/28/nginx部署vue项目/" data-id="cjkavtt5e000exkvf6jjtxbye" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/07/28/nginx部署vue项目/" data-id="cjkdca8v80009e0vf8rv9d4xm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -157,6 +159,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/08/03/今天，某天/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          今天，某天
+        
+      </div>
+    </a>
   
   
     <a href="/2018/07/23/跳跃数组/" id="article-nav-older" class="article-nav-link-wrap">
@@ -180,7 +191,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mock/" style="font-size: 10px;">mock</a> <a href="/tags/mood/" style="font-size: 15px;">mood</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 17.5px;">php</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/yaf/" style="font-size: 10px;">yaf</a>
+      <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/echarts/" style="font-size: 12px;">echarts</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mock/" style="font-size: 10px;">mock</a> <a href="/tags/mood/" style="font-size: 16px;">mood</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 18px;">php</a> <a href="/tags/vue/" style="font-size: 14px;">vue</a> <a href="/tags/yaf/" style="font-size: 10px;">yaf</a>
     </div>
   </div>
 
@@ -189,7 +200,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
   </div>
 
@@ -200,6 +211,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/08/03/今天，某天/">今天，某天</a>
+          </li>
         
           <li>
             <a href="/2018/07/28/nginx部署vue项目/">nginx部署简单的vue项目</a>
@@ -215,10 +230,6 @@
         
           <li>
             <a href="/2018/07/08/是谁扰乱了我的心弦/">是谁扰乱了我的心弦</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/01/扁平化去重排序/">数组扁平化去重排序</a>
           </li>
         
       </ul>

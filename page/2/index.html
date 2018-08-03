@@ -69,6 +69,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-yaf默认路由学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/01/yaf默认路由学习/" class="article-date">
+  <time datetime="2018-06-01T12:10:33.000Z" itemprop="datePublished">2018-06-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/01/yaf默认路由学习/">yaf默认路由学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅为个人学习之用，如有错误，欢迎指出。</p>
+<h2 id="yaf为mvc框架"><a href="#yaf为mvc框架" class="headerlink" title="yaf为mvc框架"></a>yaf为mvc框架</h2><p>yaf默认的路由协议Yaf_Route_Static, 就是分析请求中的request_uri, 在去除掉base_uri以后, 获取到真正的负载路由信息的request_uri片段, 具体的策略是, 根据”/“对request_uri分段, 依次得到Module,Controller,Action。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- index.php <span class="comment">//入口文件  </span></span><br><span class="line">- .htaccess <span class="comment">//重写规则      </span></span><br><span class="line">+ conf  </span><br><span class="line">  - application.ini <span class="comment">//配置文件，新建模块需要事先在里边声明     </span></span><br><span class="line">application/  </span><br><span class="line">  + controllers  </span><br><span class="line">     - Index.php <span class="comment">//默认控制器  </span></span><br><span class="line">  + views      </span><br><span class="line">      + index   <span class="comment">//控制器  </span></span><br><span class="line">        - index.phtml <span class="comment">//默认视图  </span></span><br><span class="line">  + modules <span class="comment">//其他模块 </span></span><br><span class="line">     + Admin  <span class="comment">//模块Module</span></span><br><span class="line">        + controllers  </span><br><span class="line">           - User.php <span class="comment">//控制器Controller,在里编写了Action，indexAction控制index.phtml</span></span><br><span class="line">        + views      </span><br><span class="line">           + user   <span class="comment">//控制器  </span></span><br><span class="line">              - index.twig <span class="comment">//视图，默认为.phtml可以通过插件换为html，twig</span></span><br><span class="line">  - library  <span class="comment">//本地类库</span></span><br><span class="line">  - models  <span class="comment">//model目录  </span></span><br><span class="line">  - plugins <span class="comment">//插件目录</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/01/yaf默认路由学习/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://heechina.cn/2018/06/01/yaf默认路由学习/" data-id="cjkdca8w40011e0vfymimvnjn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yaf/">yaf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-wx_H5_pay" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/31/wx_H5_pay/" class="article-date">
@@ -104,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/05/31/wx_H5_pay/" data-id="cjkavtt7p001zxkvfb7g3qnmz" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/05/31/wx_H5_pay/" data-id="cjkdca8wx0020e0vfnc0irfdb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -150,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/05/21/wamp的几个php扩展/" data-id="cjkavtt5x000pxkvf4kq2xz1n" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/05/21/wamp的几个php扩展/" data-id="cjkdca8vo000ie0vfc7gp1i84" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -195,7 +240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/05/15/vue-cnode/" data-id="cjkavtt5u000mxkvfd9ouvjis" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/05/15/vue-cnode/" data-id="cjkdca8vw000qe0vfwqx8gtmh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -236,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/05/08/twig日期的处理/" data-id="cjkavtt5r000kxkvfseoenr8f" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/05/08/twig日期的处理/" data-id="cjkdca8vr000le0vfi0ws1ykz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -277,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/05/01/reverse/" data-id="cjkavtt5p000ixkvfs57tdo91" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/05/01/reverse/" data-id="cjkdca8vj000ge0vfpl9e1nvn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -322,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/04/30/node_cnode/" data-id="cjkavtt5k000hxkvf06hzibtx" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/04/30/node_cnode/" data-id="cjkdca8vu000ne0vf0z12939r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
@@ -361,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/04/28/这几天是真的累/" data-id="cjkavtt6j001dxkvfgq3o563n" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/04/28/这几天是真的累/" data-id="cjkdca8wu001xe0vfpooxm2nu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mood/">mood</a></li></ul>
@@ -407,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/04/15/mock/" data-id="cjkavtt5b000cxkvffxc4soe8" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/04/15/mock/" data-id="cjkdca8vf000de0vfmjxo1nuv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mock/">mock</a></li></ul>
@@ -448,54 +493,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/04/08/lnmp隐藏phpmyadmin/" data-id="cjkavtt550009xkvfm3j207gh" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/04/08/lnmp隐藏phpmyadmin/" data-id="cjkdca8v40008e0vfygu5316p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Laravel数据库获取数据" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/01/Laravel数据库获取数据/" class="article-date">
-  <time datetime="2018-04-01T12:10:33.000Z" itemprop="datePublished">2018-04-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/01/Laravel数据库获取数据/">Laravel数据库获取数据</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Laravel获取表数据"><a href="#Laravel获取表数据" class="headerlink" title="Laravel获取表数据"></a>Laravel获取表数据</h2><p><a href="http://laravelacademy.org/post/6955.html" target="_blank" rel="noopener">Laravel文档</a></p>
-<h4 id="获取多条数据中的某值"><a href="#获取多条数据中的某值" class="headerlink" title="获取多条数据中的某值"></a>获取多条数据中的某值</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$msgtype=MessageBizConfigModel::where(<span class="string">'config_id'</span>,<span class="string">'='</span>,$apptypeid)-&gt;get();</span><br><span class="line"><span class="keyword">foreach</span> ($msgtype <span class="keyword">as</span> $msgtypelist)&#123;</span><br><span class="line">    $typeid = $msgtypelist-&gt;id;</span><br><span class="line">    $typedesc = $msgtypelist-&gt;desc;</span><br><span class="line">    array_push($typeArr,[<span class="string">'name'</span> =&gt; $typedesc, <span class="string">'value'</span> =&gt; $typeid]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/04/01/Laravel数据库获取数据/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/04/01/Laravel数据库获取数据/" data-id="cjkavtt4u0003xkvf39c7rade" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Laravel/">Laravel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
 
     </footer>
   </div>
@@ -522,7 +523,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mock/" style="font-size: 10px;">mock</a> <a href="/tags/mood/" style="font-size: 15px;">mood</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 17.5px;">php</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/yaf/" style="font-size: 10px;">yaf</a>
+      <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/echarts/" style="font-size: 12px;">echarts</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mock/" style="font-size: 10px;">mock</a> <a href="/tags/mood/" style="font-size: 16px;">mood</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 18px;">php</a> <a href="/tags/vue/" style="font-size: 14px;">vue</a> <a href="/tags/yaf/" style="font-size: 10px;">yaf</a>
     </div>
   </div>
 
@@ -531,7 +532,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
   </div>
 
@@ -542,6 +543,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/08/03/今天，某天/">今天，某天</a>
+          </li>
         
           <li>
             <a href="/2018/07/28/nginx部署vue项目/">nginx部署简单的vue项目</a>
@@ -557,10 +562,6 @@
         
           <li>
             <a href="/2018/07/08/是谁扰乱了我的心弦/">是谁扰乱了我的心弦</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/01/扁平化去重排序/">数组扁平化去重排序</a>
           </li>
         
       </ul>
