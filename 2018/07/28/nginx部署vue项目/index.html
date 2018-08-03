@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="cxx的日记本">
 <meta property="og:description" content="centos7安装nginx">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-03T01:45:48.155Z">
+<meta property="og:updated_time" content="2018-08-03T08:13:31.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx部署简单的vue项目">
 <meta name="twitter:description" content="centos7安装nginx">
@@ -108,8 +108,8 @@
 <li><p>有问题的话，查看问题并修改</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status nginx.service</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>在浏览器输入服务器地址，出现内容就算成了。不成的话可以试试修改防火墙:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=http </span><br><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=https</span><br><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<li><p>在浏览器输入服务器地址，出现内容就算成了。不成的话可以试试修改防火墙，centos7的防火墙关闭了端口还是封闭的，默认只打开22，所以需要手动打开80和443，添加其他端口也是如此：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=http </span><br><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=https</span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看打开其他端口</span></span><br><span class="line">firewall-cmd --list-all <span class="comment">#检查开放端口列表</span></span><br><span class="line">firewall-cmd --zone=public --add-port=8888/tcp   <span class="comment">#开放8888端口</span></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="vue生产"><a href="#vue生产" class="headerlink" title="vue生产"></a>vue生产</h4><ul>
@@ -149,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/07/28/nginx部署vue项目/" data-id="cjkdcp0c7000e98vf78oajq48" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/07/28/nginx部署vue项目/" data-id="cjkdsctwr0008t0vfv2coarf1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
