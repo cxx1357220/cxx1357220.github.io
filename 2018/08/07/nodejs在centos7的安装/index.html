@@ -7,18 +7,18 @@
   
   <title>nodejs在centos7的安装 | cxx的日记本</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="github参考 nodejs 101234curl -sL https://rpm.nodesource.com/setup_10.x | bash -yum install -y nodejs#查看安装是否成功node -v   找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置12345cd /home/node-service# express框架响">
+  <meta name="description" content="github参考nodejs 101234curl -sL https://rpm.nodesource.com/setup_10.x | bash -yum install -y nodejs#查看安装是否成功node -v 找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置12345cd /home/node-service# express框架响应请求">
 <meta name="keywords" content="node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nodejs在centos7的安装">
 <meta property="og:url" content="http://heechina.cn/2018/08/07/nodejs在centos7的安装/index.html">
 <meta property="og:site_name" content="cxx的日记本">
-<meta property="og:description" content="github参考 nodejs 101234curl -sL https://rpm.nodesource.com/setup_10.x | bash -yum install -y nodejs#查看安装是否成功node -v   找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置12345cd /home/node-service# express框架响">
+<meta property="og:description" content="github参考nodejs 101234curl -sL https://rpm.nodesource.com/setup_10.x | bash -yum install -y nodejs#查看安装是否成功node -v 找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置12345cd /home/node-service# express框架响应请求">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-07T08:40:47.739Z">
+<meta property="og:updated_time" content="2018-08-07T08:51:28.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodejs在centos7的安装">
-<meta name="twitter:description" content="github参考 nodejs 101234curl -sL https://rpm.nodesource.com/setup_10.x | bash -yum install -y nodejs#查看安装是否成功node -v   找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置12345cd /home/node-service# express框架响">
+<meta name="twitter:description" content="github参考nodejs 101234curl -sL https://rpm.nodesource.com/setup_10.x | bash -yum install -y nodejs#查看安装是否成功node -v 找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置12345cd /home/node-service# express框架响应请求">
   
     <link rel="alternate" href="https://github.com/cxx1357220" title="cxx的日记本" type="application/atom+xml">
   
@@ -91,10 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="github参考"><a href="#github参考" class="headerlink" title="github参考"></a><a href="https://github.com/nodesource/distributions" target="_blank" rel="noopener">github参考</a></h4><ul>
-<li>nodejs 10<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://rpm.nodesource.com/setup_10.x | bash -</span><br><span class="line">yum install -y nodejs</span><br><span class="line"><span class="comment">#查看安装是否成功</span></span><br><span class="line">node -v</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h4 id="github参考"><a href="#github参考" class="headerlink" title="github参考"></a><a href="https://github.com/nodesource/distributions" target="_blank" rel="noopener">github参考</a></h4><p>nodejs 10<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://rpm.nodesource.com/setup_10.x | bash -</span><br><span class="line">yum install -y nodejs</span><br><span class="line"><span class="comment">#查看安装是否成功</span></span><br><span class="line">node -v</span><br></pre></td></tr></table></figure></p>
 <p>找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/node-service</span><br><span class="line"><span class="comment"># express框架响应请求</span></span><br><span class="line">npm install express</span><br><span class="line"><span class="comment"># axios请求</span></span><br><span class="line">npm install axios</span><br></pre></td></tr></table></figure></p>
 <p>写个小服务express.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入包</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>),</span><br><span class="line">    axios = <span class="built_in">require</span>(<span class="string">'axios'</span>),</span><br><span class="line">    app = express();</span><br><span class="line"><span class="comment">//页面get请求</span></span><br><span class="line">app.get(<span class="string">'/index'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'new index'</span>)</span><br><span class="line">    res.send(<span class="string">'hello world'</span>) <span class="comment">//输出</span></span><br><span class="line">&#125;);</span><br><span class="line">app.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    axios.get(<span class="string">'https://cnodejs.org/api/v1/user/JacksonTian'</span>).then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(response);</span><br><span class="line">        res.send(response.data.data.loginname);</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">        res.send(err);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//监听服务</span></span><br><span class="line"><span class="keyword">var</span> server= app.listen(<span class="number">8888</span>,<span class="string">'0.0.0.0'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(server.address().address)&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node express.js</span><br></pre></td></tr></table></figure></p>
@@ -107,7 +104,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://heechina.cn/2018/08/07/nodejs在centos7的安装/" data-id="cjkjgsgmy000jq0vf98al2a1w" class="article-share-link">Share</a>
+      <a data-url="http://heechina.cn/2018/08/07/nodejs在centos7的安装/" data-id="cjkjgtzry000jbovf4nltxzev" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
