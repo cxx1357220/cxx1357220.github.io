@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[nodejs在centos7的安装]]></title>
+    <url>%2F2018%2F08%2F07%2Fnodejs%E5%9C%A8centos7%E7%9A%84%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[github参考 nodejs 101234curl -sL https://rpm.nodesource.com/setup_10.x | bash -yum install -y nodejs#查看安装是否成功node -v 找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置12345cd /home/node-service# express框架响应请求npm install express# axios请求npm install axios 写个小服务express.js1234567891011121314151617181920//引入包const express = require('express'), axios = require('axios'), app = express();//页面get请求app.get('/index',function(req,res)&#123; console.log('new index') res.send('hello world') //输出&#125;);app.get('/',function(req,res)&#123; axios.get('https://cnodejs.org/api/v1/user/JacksonTian').then((response)=&gt;&#123; console.log(response); res.send(response.data.data.loginname); &#125;).catch((err)=&gt;&#123; console.log(err); res.send(err); &#125;)&#125;)//监听服务var server= app.listen(8888,'0.0.0.0',function()&#123;console.log(server.address().address)&#125;) 启动1node express.js 本地访问一下1curl localhost:8888 没问题，有输出，外网访问一下，额，被拒绝了，那应该是服务器的问题，看一下端口是否打开123firewall-cmd --list-all #检查开放端口列表firewall-cmd --zone=public --add-port=8888/tcp #开放8888端口firewall-cmd --reload 继续尝试访问，成了。 加入自启动，我们用pm212345678910111213141516#安装一下npm install -g pm2#把服务加到PM2中启动，并命名pm2 start express.js --name 'demo'#返回这样┌──────┬──────┬────────┬───┬─────┬───────────┐│ Name │ mode │ status │ ↺ │ cpu │ memory │├──────┼──────┼────────┼───┼─────┼───────────┤│ demo │ fork │ online │ 0 │ 0% │ 10.2 MB │└──────┴──────┴────────┴───┴─────┴───────────┘#加入到centos自启动中pm2 startup centos#记得保存一下pm2 save#或者取消自执行pm2 unstartup centos 成了，你还可以查看发生了什么1pm2 monit]]></content>
+      <tags>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[今天，某天]]></title>
     <url>%2F2018%2F08%2F03%2F%E4%BB%8A%E5%A4%A9%EF%BC%8C%E6%9F%90%E5%A4%A9%2F</url>
     <content type="text"><![CDATA[今天，跟同事聊天，突然聊到年纪，你24了呀。不，我23我23！不管怎么样，突然觉得自己老了，回想着自己18岁的样子，或许那个夏天也像现在那样燥热，做下决定的时候根本不会意识到会对人生造成多大的改变。可能年轻就是这样，不管如何在日记中也不过是轻描淡写的一天。]]></content>

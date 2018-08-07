@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>nodejs在centos7的安装 | cxx的日记本</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="github参考 nodejs 101234curl -sL https://rpm.nodesource.com/setup_10.x | bash -yum install -y nodejs#查看安装是否成功node -v   找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置12345cd /home/node-service# express框架响">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodejs在centos7的安装">
+<meta property="og:url" content="http://heechina.cn/2018/08/07/nodejs在centos7的安装/index.html">
+<meta property="og:site_name" content="cxx的日记本">
+<meta property="og:description" content="github参考 nodejs 101234curl -sL https://rpm.nodesource.com/setup_10.x | bash -yum install -y nodejs#查看安装是否成功node -v   找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置12345cd /home/node-service# express框架响">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-07T08:40:47.739Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nodejs在centos7的安装">
+<meta name="twitter:description" content="github参考 nodejs 101234curl -sL https://rpm.nodesource.com/setup_10.x | bash -yum install -y nodejs#查看安装是否成功node -v   找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置12345cd /home/node-service# express框架响">
+  
+    <link rel="alternate" href="https://github.com/cxx1357220" title="cxx的日记本" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">cxx的日记本</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录学习的技能和遇到的问题</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="https://github.com/cxx1357220" title="RSS Feed"></a>
+        
+        <!-- <a id="nav-search-btn" class="nav-icon" title="Search"></a> -->
+      </nav>
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://heechina.cn"></form>
+      </div> -->
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-nodejs在centos7的安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/07/nodejs在centos7的安装/" class="article-date">
+  <time datetime="2018-08-07T08:40:11.000Z" itemprop="datePublished">2018-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      nodejs在centos7的安装
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="github参考"><a href="#github参考" class="headerlink" title="github参考"></a><a href="https://github.com/nodesource/distributions" target="_blank" rel="noopener">github参考</a></h4><ul>
+<li>nodejs 10<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://rpm.nodesource.com/setup_10.x | bash -</span><br><span class="line">yum install -y nodejs</span><br><span class="line"><span class="comment">#查看安装是否成功</span></span><br><span class="line">node -v</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>找个地放文件，我放在/home/node-service下，纯属我喜欢，安装一些需要的配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/node-service</span><br><span class="line"><span class="comment"># express框架响应请求</span></span><br><span class="line">npm install express</span><br><span class="line"><span class="comment"># axios请求</span></span><br><span class="line">npm install axios</span><br></pre></td></tr></table></figure></p>
+<p>写个小服务express.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入包</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>),</span><br><span class="line">    axios = <span class="built_in">require</span>(<span class="string">'axios'</span>),</span><br><span class="line">    app = express();</span><br><span class="line"><span class="comment">//页面get请求</span></span><br><span class="line">app.get(<span class="string">'/index'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'new index'</span>)</span><br><span class="line">    res.send(<span class="string">'hello world'</span>) <span class="comment">//输出</span></span><br><span class="line">&#125;);</span><br><span class="line">app.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    axios.get(<span class="string">'https://cnodejs.org/api/v1/user/JacksonTian'</span>).then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(response);</span><br><span class="line">        res.send(response.data.data.loginname);</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">        res.send(err);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//监听服务</span></span><br><span class="line"><span class="keyword">var</span> server= app.listen(<span class="number">8888</span>,<span class="string">'0.0.0.0'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(server.address().address)&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node express.js</span><br></pre></td></tr></table></figure></p>
+<p>本地访问一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl localhost:8888</span><br></pre></td></tr></table></figure></p>
+<p>没问题，有输出，外网访问一下，额，被拒绝了，那应该是服务器的问题，看一下端口是否打开<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all <span class="comment">#检查开放端口列表</span></span><br><span class="line">firewall-cmd --zone=public --add-port=8888/tcp   <span class="comment">#开放8888端口</span></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></p>
+<p>继续尝试访问，成了。</p>
+<p>加入自启动，我们用pm2<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装一下</span></span><br><span class="line">npm install -g pm2</span><br><span class="line"><span class="comment">#把服务加到PM2中启动，并命名</span></span><br><span class="line">pm2 start express.js --name <span class="string">'demo'</span></span><br><span class="line"><span class="comment">#返回这样</span></span><br><span class="line">┌──────┬──────┬────────┬───┬─────┬───────────┐</span><br><span class="line">│ Name │ mode │ status │ ↺ │ cpu │ memory    │</span><br><span class="line">├──────┼──────┼────────┼───┼─────┼───────────┤</span><br><span class="line">│ demo │ fork │ online │ 0 │ 0%  │ 10.2 MB   │</span><br><span class="line">└──────┴──────┴────────┴───┴─────┴───────────┘</span><br><span class="line"><span class="comment">#加入到centos自启动中</span></span><br><span class="line">pm2 startup centos</span><br><span class="line"><span class="comment">#记得保存一下</span></span><br><span class="line">pm2 save</span><br><span class="line"><span class="comment">#或者取消自执行</span></span><br><span class="line">pm2 unstartup centos</span><br></pre></td></tr></table></figure></p>
+<p>成了，你还可以查看发生了什么<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 monit</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://heechina.cn/2018/08/07/nodejs在centos7的安装/" data-id="cjkjgh0wt000a8gvfl135rz1u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/03/今天，某天/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">今天，某天</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/echarts/" style="font-size: 12px;">echarts</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mock/" style="font-size: 10px;">mock</a> <a href="/tags/mood/" style="font-size: 16px;">mood</a> <a href="/tags/node/" style="font-size: 12px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 18px;">php</a> <a href="/tags/vue/" style="font-size: 14px;">vue</a> <a href="/tags/yaf/" style="font-size: 10px;">yaf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/07/nodejs在centos7的安装/">nodejs在centos7的安装</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/今天，某天/">今天，某天</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/28/nginx部署vue项目/">nginx部署简单的vue项目</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/23/跳跃数组/">跳跃数组</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/最近写自适应想起的几个css/">最近写自适应想起的几个css</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 cxx1357220<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
